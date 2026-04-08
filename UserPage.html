@@ -4,32 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UserPage</title>
-    <!-- Linking Font Awesome for icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="UserPageStyle.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="UserPageStyle.css">
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <!-- Header & navbar -->
-    <header>
-        <nav class="navbar">
-            <a href="#" class="nav-logo">
-                <h2 class="logo-text"> KATOON </h2>
-            </a>
-            <ul class="nav-menu">
-                
-                <li class="nav-item">
-                    <a href="#" id= "ORIGINAL" class="nav-link">ORIGINAL</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" id="TEAM" class="nav-link">TEAM</a>
-                </li>
-                
-        </nav>
-    </header>
 
-   </body>
-     
+<header>
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <h2 class="logo-text">KATOON</h2>
+        </a>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" id="ORIGINAL" class="nav-link">ORIGINAL</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" id="TEAM" class="nav-link">TEAM</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1 class="section-title">Login Information</h1>
+
+    <div class="profile-card">
+
+        <!-- upload รูป -->
+        <input type="file" id="upload" hidden>
+
+        <label for="upload">
+            <img src="https://via.placeholder.com/100" id="profileImage" class="profile-pic">
+        </label>
+
+        <div class="user-info">
+            <p><strong>Username:</strong> user123</p>
+        </div>
+
+    </div>
+
+    <h1 class="section-title">Nickname</h1>
+
+    <div class="profile-card">
+        <div class="user-info">
+            <p><strong>Nickname:</strong> Toon</p>
+        </div>
+
+        <button class="edit-btn">Edit</button>
+    </div>
+
+    <h1 class="section-title">Email</h1>
+
+    <div class="profile-card column">
+
+        <!-- Email -->
+        <div class="email-row">
+            <div class="user-info">
+                <p><strong>Email:</strong> user@email.com</p>
+            </div>
+            <button class="edit-btn">Add</button>
+        </div>
+
+        <hr>
+
+        <!-- Toggle 1 -->
+        <div class="toggle-row">
+            <span>Service Emails</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Toggle 2 -->
+        <div class="toggle-row">
+            <span>Top Comments/Comments</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+    </div>
+
+    <h1 class="section-title">Coin Information</h1>
+
+    <div class="profile-card coin-card">
+
+        <!-- ซ้าย -->
+        <div class="coin-left">
+            <p class="coin-label">Current coin</p>
+            <h2 class="coin-value">185,428 coin</h2>
+        </div>
+
+        <!-- เส้นแบ่ง -->
+        <div class="divider"></div>
+
+        <!-- ขวา -->
+        <div class="coin-right">
+            <p class="coin-label">Transaction log</p>
+
+            <div class="transaction">
+                <span>20/11/2030</span>
+                <span class="plus">+200</span>
+            </div>
+
+            <div class="transaction">
+                <span>19/11/2030</span>
+                <span class="plus">+30</span>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script>
+document.getElementById("upload").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById("profileImage").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+</script>
+
+</body>
+</html>
