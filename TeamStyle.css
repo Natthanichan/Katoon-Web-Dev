@@ -23,6 +23,7 @@
     --primary-color: #FFF5E4;
     --cream-color: #FFF5E4;
     --secondary-color: #0181B4;
+    --blue-color-font: rgba(1, 129, 180, 0.626);
     --blue-color: #0181B4;
     --orange-color: #E3AE79;
     --gray-color: #757575;
@@ -32,7 +33,7 @@
     --font-size-n: 1rem;
     --font-size-m: 1.12rem;
     --font-size-l: 1.5rem;
-    --font-size-xl: 2rem;
+    --font-size-xl: 2.1rem;
     --font-size-xxl: 2.3rem;
 
     /*Font weight*/
@@ -51,4 +52,57 @@
 
 }
 
+/* ===== TEAM SECTION ===== */
+.container {
+    max-width: var(--site-max-width);
+    margin: 120px auto 0; /* เผื่อ navbar fixed */
+    padding: 40px;
+    text-align: center;
+}
 
+/* Title */
+.team-title {
+    font-family: "Roboto Mono";
+    color: var(--blue-color);
+    font-size: var(--font-size-xl);
+    margin-bottom: 50px;
+}
+
+/* Layout ทีม */
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+    font-family: "Roboto Mono";
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+/* รูป */
+.card img {
+    width: 160px;
+    height: 160px;
+    border-radius: var(--border-radius-m);
+    object-fit: cover;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.15);
+}
+
+
+.card h3 {
+    margin-top: 12px;
+    font-size: var(--font-size-m);
+}
+
+.card p {
+    font-size: var(--font-size-s);
+    color: var(--gray-color);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
