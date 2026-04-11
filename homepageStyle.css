@@ -23,6 +23,7 @@
     --primary-color: #FFF5E4;
     --cream-color: #FFF5E4;
     --secondary-color: #0181B4;
+    --blue-color-font: rgba(1, 129, 180, 0.626);
     --blue-color: #0181B4;
     --orange-color: #E3AE79;
     --gray-color: #757575;
@@ -32,7 +33,7 @@
     --font-size-n: 1rem;
     --font-size-m: 1.12rem;
     --font-size-l: 1.5rem;
-    --font-size-xl: 2rem;
+    --font-size-xl: 2.1rem;
     --font-size-xxl: 2.3rem;
 
     /*Font weight*/
@@ -51,96 +52,7 @@
 
 }
 
-
-body {
-    background: var(--primary-color);
-    
-}
-
-/* Navbar */
-header {
-    position: fixed;
-    width: 100%;
-    z-index: 5;
-    background: var(--primary-color);
-    border-bottom: 2px solid #e5d5c5;
-    
-}
-
-header .navbar{
-    display: flex;
-    padding: 20px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-logo {
-    text-decoration: none;
-    display: inline-block;
-}
-
-.nav-logo .logo-text {
-    color: var(--blue-color);
-    font-family: "Joti One";
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
-    text-decoration: none 
-}
-
-.nav-menu{
-    font-family: "Roboto Mono";
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;        
-    padding: 0;       
-    align-items: center;
-    margin-left: 40px; 
-    margin-right: auto;
-    
-    
-}
-
-.nav-item {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
- 
-}
-
-.nav-menu .nav-item #ORIGINAL{
-
-    color: var(--orange-color);
-    display: flex;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.nav-menu .nav-item #TEAM{
-
-    color: var(--gray-color);
-    display: flex;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.navbar .nav-menu .nav-link {
-    display: inline-block;
-    padding: 10px 18px;
-    color: var(--white-color);
-    font-size: var(--font-size-m);
-    border-radius: var(--border-radius-m);
-    transition: 0.3s ease;
-}
-
-
-.navbar .nav-menu .nav-link:hover {
-    color: var(--primary-color);
-    background: var(--secondary-color);
-}
-
 /* Carousel */
-
 .carousel, 
 .carousel-inner, 
 .carousel-item {
