@@ -9,67 +9,133 @@
     <link rel="stylesheet" href="AdminStyle.css">
     <link rel="stylesheet" href="navbar.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    // โหลด library lottie
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const searchAnim = document.getElementById("searchAnim");
-            const loginAnim = document.getElementById("loginAnim");
 
-            searchAnim.addEventListener("click", () => {
-                searchAnim.stop();
-                searchAnim.play();
-            });
-
-            loginAnim.addEventListener("click", () => {
-                loginAnim.stop();
-                loginAnim.play();
-            });
-        });
-    </script>
+    <!-- .JS-->
+     <script src="script.js"></script>
 </head>
 
 <body>
-  <header>
-      <div class="navbar">
-          <ul class="nav-menu">
-              <li>
+    <header>
+        <div class="navbar">
+            <ul class="nav-menu">
+                <li>
                 <a href="#" class="nav-logo">
                     <span class="logo-text">KATOON</span>
                 </a>
-              </li>
-              <li>
-                  <a class="nav-item" href="#" id="ORIGINAL">ORIGINAL</a>
-              </li>
-              <li >
-                  <a class="nav-item active" href="#" id="TEAM">TEAM</a>
-              </li>
-              <li class="search-item">
-                      <a href="#" class="search">
-                      <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
-                      <lottie-player 
-                          id="searchAnim"
-                          src="/image/navbarIcon/search.json"
-                          background="transparent"
-                          speed="1"
-                          style="width:30px; height: 30px;"
-                      ></lottie-player>
-                  </a>
-              </li>
-              <li class="login-item">
-                  <a href="#" class="login">
-                      <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
-                      <lottie-player 
-                          id="loginAnim"
-                          src="/image/navbarIcon/login.json"
-                          background="transparent"
-                          speed="1"
-                          style="width:35px; height: 35px;"
-                      ></lottie-player>
-                  </a>
-              </li>
-          </ul>
-      </div>
-  </header>
+                </li>
+                <li>
+                    <a class="nav-item active" href="#" id="AdminDashboard">ADMIN DASHBOARD</a>
+                </li>
+                <li class="out-item">
+                    <a href="#" class="out">
+                    <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
+                    <lottie-player 
+                        id="outAnim"
+                        src="/image/navbarIcon/out.json"
+                        background="transparent"
+                        speed="1"
+                        style="width:30px; height: 30px;"
+                    ></lottie-player>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <!-- Add new -->
+            <div class="add-card" id="addBtn">
+                <a href="#" class="login">
+                    <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
+                    <lottie-player 
+                        id="addAnim"
+                        src="/image/navbarIcon/add.json"
+                        background="transparent"
+                        speed="1"
+                        style="width:35px; height: 35px;"
+                    ></lottie-player>
+                </a>
+            </div>
+
+            <!-- Card 
+            <div class="card">
+                <img src="https://via.placeholder.com/150x200">
+                <p class="genre">School life</p>
+                <p>Your Letter</p>
+            </div>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/150x200">
+                <p class="genre">Romance</p>
+                <p>Our Secret Alliance</p>
+            </div>
+
+        </div>
+    </div> -->
+
+    <!-- POPUP -->
+    <div id="popup">
+    <div class="popup-box">
+        <span id="closeBtn">←</span>
+
+        <div class="popup-content">
+            <!-- Form -->
+            <div class="form">
+                <div class="form-group">
+                    <label>Cover Picture</label>
+                    <input type="file">
+                </div>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text">
+                </div>
+
+                <div class="form-group">
+                    <label>Author name</label>
+                    <input type="text">
+                </div>
+
+                <div class="form-group">
+                    <label>Weekly Date</label>
+                    <select>
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Genre</label>
+                    <select>
+                        <option>Romance</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>View</label>
+                    <input type="text">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button>Delete</button>
+                    <button>Update</button>
+                    <button>Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
 </html>
