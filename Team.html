@@ -1,28 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Team</title>
-        <link rel="stylesheet" href="navbar.css">
-        <link rel="stylesheet" href="TeamStyle.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Team</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="TeamStyle.css">
+    // โหลด library lottie
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchanim = document.getElementById("searchAnim");
+        const loginanim = document.getElementById("loginAnim");
+
+        searchAnim.addEventListener("click", () => {
+            searchAnim.stop();
+            searchAnim.play();
+        });
+
+        loginAnim.addEventListener("click", () => {
+            loginAnim.stop();
+            loginAnim.play();
+        });
+    });
+    </script>
+</head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <a href="#" class="nav-logo">
-                <span class="logo-text">KATOON</span>
-            </a>
-            <ul class="nav-menu">
-                <li>
-                    <a class="nav-item" href="#" id="ORIGINAL">ORIGINAL</a>
-                </li>
-                <li >
-                    <a class="nav-item  active" href="#" id="TEAM">TEAM</a>
-                </li>
-            </ul>
-        </div>
-    </header>
+  <header>
+      <div class="navbar">
+          <ul class="nav-menu">
+              <li>
+                <a href="#" class="nav-logo">
+                    <span class="logo-text">KATOON</span>
+                </a>
+              </li>
+              <li>
+                  <a class="nav-item" href="#" id="ORIGINAL">ORIGINAL</a>
+              </li>
+              <li >
+                  <a class="nav-item active" href="#" id="TEAM">TEAM</a>
+              </li>
+              <li class="search-item">
+                      <a href="#" class="search">
+                      <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
+                      <lottie-player 
+                          id="searchAnim"
+                          src="/image/navbarIcon/search.json"
+                          background="transparent"
+                          speed="1"
+                          style="width:30px; height: 30px;"
+                      ></lottie-player>
+                  </a>
+              </li>
+              <li class="login-item">
+                  <a href="#" class="login">
+                      <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
+                      <lottie-player 
+                          id="loginAnim"
+                          src="/image/navbarIcon/login.json"
+                          background="transparent"
+                          speed="1"
+                          style="width:35px; height: 35px;"
+                      ></lottie-player>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </header>
 
     <div class="container">
         <h2 class="team-title">TEAM DEVELOPER &lt;3</h2>
@@ -30,37 +74,33 @@
         <div class="team">
 
             <div class="card active">
-                <img src="/image/Fogus.jpg">
+                <img src="/image/team dev/Fogus.jpg">
                 <h3>Fogus</h3>
                 <p>Nicharee Pangderm</p>
                 <p>6788182</p>
             </div>
 
             <div class="card">
-                <img src="/image/Fasai.jpg">
+                <img src="/image/team dev/Fasai.jpg">
                 <h3>Fasai</h3>
                 <p>Natthanicha Kongkaew</p>
                 <p>6788052</p>
             </div>
 
             <div class="card">
-                <img src="/image/Dream.jpg">
+                <img src="/image/team dev/Dream.jpg">
                 <h3>Dream</h3>
                 <p>Thanchanok Sangkaphan</p>
                 <p>6788210</p>
             </div>
 
             <div class="card">
-                <img src="/image/Nine.jpg">
+                <img src="/image/team dev/Nine.jpg">
                 <h3>Nine</h3>
                 <p>Thakorn Jullobol</p>
                 <p>6788179</p>
             </div>
-
         </div>
-
     </div>
-    </div>
-
 </body>
 </html>
