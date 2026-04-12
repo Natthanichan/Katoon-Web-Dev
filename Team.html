@@ -5,24 +5,12 @@
     <title>Team</title>
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="TeamStyle.css">
-    // โหลด library lottie
+
+    <!-- .JS-->
+     <script src="script.js"></script>
+     
+    <!-- โหลด library lottie -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const searchanim = document.getElementById("searchAnim");
-        const loginanim = document.getElementById("loginAnim");
-
-        searchAnim.addEventListener("click", () => {
-            searchAnim.stop();
-            searchAnim.play();
-        });
-
-        loginAnim.addEventListener("click", () => {
-            loginAnim.stop();
-            loginAnim.play();
-        });
-    });
-    </script>
 </head>
 
 <body>
@@ -41,16 +29,16 @@
                   <a class="nav-item active" href="#" id="TEAM">TEAM</a>
               </li>
               <li class="search-item">
-                      <a href="#" class="search">
-                      <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
-                      <lottie-player 
-                          id="searchAnim"
-                          src="/image/navbarIcon/search.json"
-                          background="transparent"
-                          speed="1"
-                          style="width:30px; height: 30px;"
-                      ></lottie-player>
-                  </a>
+                <a href="#" class="search">
+                    <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
+                    <lottie-player 
+                        id="searchAnim"
+                        src="/image/navbarIcon/search.json"
+                        background="transparent"
+                        speed="1"
+                        style="width:30px; height: 30px;"
+                    ></lottie-player>
+                </a>
               </li>
               <li class="login-item">
                   <a href="#" class="login">
