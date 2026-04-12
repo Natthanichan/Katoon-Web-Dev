@@ -106,3 +106,10 @@
 .card:hover {
     transform: translateY(-8px);
 }
+
+/* container ขวา */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
