@@ -17,7 +17,7 @@
 }
 
 :root {
-    /*colot*/
+    /*color*/
     --white-color: #fff;
     --dark-color: #252525;
     --primary-color: #FFF5E4;
@@ -49,22 +49,137 @@
 
     /*Size max width*/
     --site-max-width: 1300px;
-
 }
 
-/* Carousel */
+
 .carousel, 
 .carousel-inner, 
 .carousel-item {
-    
-    padding-top: 25px; 
     background-color: transparent;
 }
+
+.carousel {
+    max-width: 1000px; 
+    margin: 130px auto;
+}
+
 .carousel-item img {
     width: 100%;
-    height: 450px;      
+    height: 300px;      
     object-fit: cover;   
     display: block;
 }
 
+.hero-section .hero-item {
+    flex: 1;
+    min-width: 0; 
+}
 
+.hero-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+/* ===============================
+   Daily Section
+   =============================== */
+.daily-title {
+    color: var(--secondary-color);
+    font-family: "Joti One", serif;
+    font-size: var(--font-size-l);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.day-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.day-pill {
+    padding: 6px 20px;
+    background-color: #EFE4D6; 
+    color: var(--dark-color);
+    border-radius: var(--border-radius-m);
+    font-family: "Roboto Mono", monospace;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-s);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+.day-pill.active {
+    background-color: var(--orange-color);
+    color: var(--dark-color);
+}
+
+.day-pill:hover {
+    background-color: var(--orange-color);
+    opacity: 0.8;
+}
+
+/* ===============================
+   Cartoon Cards 
+   =============================== */
+.katoon-card {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background: transparent;
+}
+
+.katoon-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.katoon-category {
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--gray-color);
+    margin-bottom: 2px;
+}
+
+.katoon-title {
+    font-family: "Roboto Mono", monospace;
+    font-weight: var(--font-weight-bold);
+    font-size: 0.9rem;
+    color: var(--dark-color);
+    line-height: 1.2;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+.katoon-footer {
+    background-color: #F8EAD6; 
+    border-top: 1px solid #EFE4D6;
+}
+
+.footer-links a {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.7rem;
+    margin: 0 5px;
+    font-weight: var(--font-weight-medium);
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-logo {
+    color: var(--blue-color-font);
+    font-family: "Joti One", serif;
+    font-size: var(--font-size-xl);
+    margin-top: 15px;
+}
