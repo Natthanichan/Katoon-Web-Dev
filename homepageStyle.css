@@ -164,22 +164,36 @@
     border-top: 1px solid #EFE4D6;
 }
 
-.footer-links a {
-    color: var(--dark-color);
-    text-decoration: none;
-    font-family: "Roboto Mono", monospace;
-    font-size: 0.7rem;
-    margin: 0 5px;
-    font-weight: var(--font-weight-medium);
+.katoon-footer .container #foot-img {
+    width: 80px;         
+    height: 80px;       
+    object-fit: contain; 
+    border-radius: var(--border-radius-s); 
+    display: block;     
+    margin: 0 auto 15px; 
 }
+
+
+.footer-logo {
+    font-family: "Joti One", serif; 
+    color: var(--blue-color-font);  
+    font-size: var(--font-size-xl);
+    margin-top: 10px;
+}
+
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--gray-color); 
+    font-family: "Roboto Mono", monospace;
+    font-size: var(--font-size-s);
+    margin: 0 5px;
+}
+
+
 
 .footer-links a:hover {
     color: var(--secondary-color);
 }
 
-.footer-logo {
-    color: var(--blue-color-font);
-    font-family: "Joti One", serif;
-    font-size: var(--font-size-xl);
-    margin-top: 15px;
-}
+
