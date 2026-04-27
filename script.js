@@ -48,6 +48,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// ------------------------------------------------------------------ //
+
+// --- PUBLIC WEB SERVICE: QUOTE GARDEN ---
+async function fetchDailyQuote() {
+    try {
+        // Fetching a random quote from the public web service
+        const response = await fetch('https://quote-garden.onrender.com/api/v3/quotes/random');
+        const result = await response.json();
+        
+        // Extracting data from the JSON response
+        const quoteText = result.data[0].quoteText;
+        const quoteAuthor = result.data[0].quoteAuthor;
+
+        // Updating the homepage UI
+        document.getElementById('quoteText').innerText = `"${quoteText}"`;
+        document.getElementById('quoteAuthor').innerText = `- ${quoteAuthor}`;
+    } catch (error) {
+        console.log("Error connecting to web service:", error);
+        document.getElementById('quoteText').innerText = "Keep reading, keep dreaming!";
+    }
+}
+
+// Ensure the quote loads when the page opens
+window.addEventListener("load", fetchDailyQuote);
+
+// --------------------------------------------------------------------- //
+
 function openModal() {
   document.getElementById("loginModal").style.display = "flex";
 }
