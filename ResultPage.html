@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATOON | Search Results</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="ResultStyle.css">
+</head>
+
+<body>
+  <header>
+      <div class="navbar">
+          <ul class="nav-menu">
+              <li><a href="#" class="nav-logo"><span class="logo-text">KATOON</span></a></li>
+              <li><a class="nav-item" href="#">ORIGINAL</a></li>
+              <li><a class="nav-item" href="#">TEAM</a></li>
+              <li class="search-item">
+                  <a href="#" class="search">
+                      <lottie-player src="/image/navbarIcon/search.json" background="transparent" speed="1" style="width:30px; height: 30px;"></lottie-player>
+                  </a>
+              </li>
+              <li class="login-item">
+                  <a href="#" class="login">
+                      <lottie-player src="/image/navbarIcon/login.json" background="transparent" speed="1" style="width:35px; height: 35px;"></lottie-player>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </header>
+
+  <main class="container result-main-wrapper">
+      
+      <section class="search-summary-bar">
+          <div class="summary-box">
+              Showing the result of: <span class="search-term">Romance</span>
+          </div>
+          <div class="pill-display">Search by: All</div>
+          <div class="pill-display">Filter by: None</div>
+      </section>
+
+      <section class="grid-header mt-4">
+          <div class="d-flex justify-content-between align-items-end">
+              <div>
+                  <span class="all-label">ALL</span>
+                  <span class="series-count">999 series</span>
+              </div>
+              <a href="#" class="view-all-link">View all ></a>
+          </div>
+      </section>
+
+      <section class="results-grid-section mt-3">
+          <div class="row row-cols-2 row-cols-md-5 g-4">
+              
+              <div class="col">
+                  <article class="katoon-card">
+                      <div class="img-container">
+                          <div class="img-placeholder"></div> 
+                      </div>
+                      <div class="card-info">
+                          <h3 class="comic-title">One Husband Is Enough</h3>
+                          <p class="comic-author">Go Sunyoung</p>
+                          <p class="comic-stats">50M Views</p>
+                      </div>
+                  </article>
+              </div>
+
+              </div>
+      </section>
+  </main>
+
+  <footer class="katoon-footer text-center mt-5 py-4">
+      <div class="container">
+          <img id="foot-img" src="image/QR code.png" alt="QR Code" class="mb-3">
+          <div class="footer-links mb-2">
+              <a href="#">ABOUT</a> | <a href="#">FEEDBACK</a> | <a href="#">HELP</a> | <a href="#">TERMS</a>
+          </div>
+          <h2 class="footer-logo">KATOON</h2>
+      </div>
+  </footer>
+
+</body>
+</html>
