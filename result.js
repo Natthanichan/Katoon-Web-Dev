@@ -1,54 +1,72 @@
+// -------------------------
+// 1. ดึง element มาก่อน
+// -------------------------
 const resultGrid = document.getElementById("resultGrid");
 const searchTermText = document.querySelector(".search-term");
-const seriesCount = document.querySelector(".series-count");
 
+const resultSearchInput = document.getElementById("resultSearchInput");
+const resultSearchBtn = document.getElementById("resultSearchBtn");
+
+// -------------------------
+// 2. อ่านค่า URL
+// -------------------------
 const params = new URLSearchParams(window.location.search);
 
 let keyword = params.get("keyword") || "";
 let searchBy = params.get("searchBy") || "All";
 
+// -------------------------
+// 3. ฟังก์ชันโหลดข้อมูล
+// -------------------------
 async function loadResults() {
-  searchTermText.textContent = keyword || "All";
+  searchTermText.textContent = keyword;
 
   const url =
     `http://localhost:3000/api/katoons?keyword=${encodeURIComponent(keyword)}&searchBy=${encodeURIComponent(searchBy)}`;
 
-  try {
-    resultGrid.innerHTML = `<p>Loading...</p>`;
+  const response = await fetch(url);
+  const katoons = await response.json();
 
-    const response = await fetch(url);
-    const katoons = await response.json();
+  resultGrid.innerHTML = "";
 
-    resultGrid.innerHTML = "";
-    seriesCount.textContent = `${katoons.length} series`;
-
-    if (katoons.length === 0) {
-      resultGrid.innerHTML = `<p>No results found</p>`;
-      return;
-    }
-
-    katoons.forEach((katoon) => {
-      const imagePath = katoon.cover_image || "images/default.jpg";
-
-      resultGrid.innerHTML += `
-        <div class="col">
-          <article class="katoon-card">
-            <div class="img-container">
-              <img src="${imagePath}" alt="${katoon.title}" class="result-img">
-            </div>
-            <div class="card-info">
-              <h3 class="comic-title">${katoon.title}</h3>
-              <p class="comic-author">${katoon.category}</p>
-              <p class="comic-stats">${katoon.status}</p>
-            </div>
-          </article>
-        </div>
-      `;
-    });
-  } catch (error) {
-    console.log(error);
-    resultGrid.innerHTML = `<p>Cannot load results</p>`;
-  }
+  katoons.forEach((katoon) => {
+    resultGrid.innerHTML += `
+      <div class="col">
+        <article class="katoon-card">
+          <img src="${katoon.cover_image}" class="result-img">
+          <h3>${katoon.title}</h3>
+        </article>
+      </div>
+    `;
+  });
 }
 
+// -------------------------
+// 4. 🔥 ใส่ตรงนี้ (searchAgain)
+// -------------------------
+function searchAgain() {
+  const newKeyword = resultSearchInput.value.trim();
+
+  const newUrl = `?keyword=${encodeURIComponent(newKeyword)}&searchBy=${encodeURIComponent(searchBy)}`;
+  window.history.pushState({}, "", newUrl);
+
+  keyword = newKeyword;
+
+  loadResults();
+}
+
+// -------------------------
+// 5. 🔥 ใส่ตรงนี้ (event)
+// -------------------------
+resultSearchBtn.addEventListener("click", searchAgain);
+
+resultSearchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    searchAgain();
+  }
+});
+
+// -------------------------
+// 6. โหลดครั้งแรก
+// -------------------------
 loadResults();
