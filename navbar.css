@@ -76,6 +76,120 @@ header .navbar {
     padding: 0 30px;
     display: flex;
     align-items: center;
+}
+
+.nav-logo {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-logo .logo-text {
+    color: var(--blue-color-font);
+    font-family: "Joti One";
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.144);
+    text-decoration: none 
+}
+
+.nav-menu {
+    font-family: "Roboto Mono";
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex: 1; /* ⭐ กินพื้นที่ที่เหลือทั้งหมด */
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-menu .nav-item {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-color);
+    text-decoration: none;
+    transition: 0.1s;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu .nav-item:hover {
+    color: var(--orange-color);
+}
+
+.nav-menu .nav-item.active {
+    color: var(--orange-color);
+}
+
+.search-item {
+    margin-left: auto; /* ⭐ ดัน search และ login ไปขวา */
+}
+
+.login-item {
+    margin-left: 10px; /* optional เว้นระยะ */
+}
+
+/* .navbar .nav-menu .nav-link {
+    display: inline-block;
+    padding: 10px 18px;
+    color: var(--white-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+}
+
+
+.navbar .nav-menu .nav-link:hover {
+    color: var(--primary-color);
+    background: var(--secondary-color);
+} */    --font-size-xxl: 2.3rem;
+
+    /*Font weight*/
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /*Border radius*/
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    /*Size max width*/
+    --site-max-width: 1300px;
+
+}
+
+
+body {
+    background: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    background: var(--primary-color);
+    border-bottom: 2px solid #e5d5c5;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+header .navbar {
+    height: 100px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
