@@ -10,47 +10,23 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <link rel="stylesheet" href="ResultStyle.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
   <header>
       <div class="navbar">
           <ul class="nav-menu">
-              <li>
-                <a href="Homepage.html" class="nav-logo">
-                    <span class="logo-text">KATOON</span>
-                </a>
-              </li>
-              <li>
-                  <a class="nav-item" href="Homepage.html" id="ORIGINAL">ORIGINAL</a>
-              </li>
-              <li >
-                  <a class="nav-item active" href="#" id="TEAM">TEAM</a>
-              </li>
+              <li><a href="#" class="nav-logo"><span class="logo-text">KATOON</span></a></li>
+              <li><a class="nav-item" href="#">ORIGINAL</a></li>
+              <li><a class="nav-item" href="#">TEAM</a></li>
               <li class="search-item">
-                <a href="#" class="search">
-                    <!-- Lottie animation player search-->
-                    <lottie-player 
-                        id="searchAnim"
-                        src="/image/navbarIcon/search.json"
-                        background="transparent"
-                        speed="1"
-                        style="width:30px; height: 30px;"
-                    ></lottie-player>
-                </a>
+                  <a href="#" class="search">
+                      <lottie-player src="/image/navbarIcon/search.json" background="transparent" speed="1" style="width:30px; height: 30px;"></lottie-player>
+                  </a>
               </li>
               <li class="login-item">
                   <a href="#" class="login">
-                      <!-- Lottie animation player login-->
-                      <lottie-player 
-                          id="loginAnim"
-                          src="/image/navbarIcon/login.json"
-                          background="transparent"
-                          speed="1"
-                          style="width:35px; height: 35px;"
-                      ></lottie-player>
+                      <lottie-player src="/image/navbarIcon/login.json" background="transparent" speed="1" style="width:35px; height: 35px;"></lottie-player>
                   </a>
               </li>
           </ul>
@@ -78,7 +54,7 @@
       </section>
 
       <section class="results-grid-section mt-3">
-          <div class="row row-cols-2 row-cols-md-5 g-4">
+          <div class="row row-cols-2 row-cols-md-5 g-4" id="resultGrid">
               
               <div class="col">
                   <article class="katoon-card">
@@ -106,6 +82,7 @@
           <h2 class="footer-logo">KATOON</h2>
       </div>
   </footer>
+  <script src="result.js"></script>
 
 </body>
 </html>
