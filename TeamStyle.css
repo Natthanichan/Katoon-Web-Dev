@@ -55,9 +55,12 @@
 /* ===== TEAM SECTION ===== */
 .container {
     max-width: var(--site-max-width);
-    margin: 120px auto 0; /* เผื่อ navbar fixed */
+    margin: 120px auto 0;
     padding: 40px;
     text-align: center;
+
+    flex: 1;
+    min-height: calc(90vh - 100px); /* ⭐ หัก navbar ออก */
 }
 
 /* Title */
@@ -72,7 +75,7 @@
 .team {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
