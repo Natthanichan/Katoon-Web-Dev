@@ -64,7 +64,7 @@
     width: 80px;         
     height: 80px;       
     object-fit: contain; 
-    /*border-radius: var(--border-radius-s); */
+    border-radius: var(--border-radius-s);
     display: block;     
     margin: 0 auto 15px; 
 }
