@@ -55,6 +55,7 @@
                       ></lottie-player>
                   </a>
               </li>
+                </li>
           </ul>
       </div>
   </header>
@@ -135,8 +136,27 @@
                   </div>
               </div>
           </div>
-      </div>
-  </main>
+
+    <div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        
+        <h2 class="modal-title">Log in KATOON!</h2> 
+        
+        <div class="login-field">
+            <label for="username">Username</label> 
+            <input type="text" id="username" placeholder="Value"> 
+        </div>
+
+        <div class="login-field">
+            <label for="password">Password</label> 
+            <input type="password" id="password" placeholder="Value"> 
+        </div>
+
+        <button class="btn-user">User Login</button> 
+        <button class="btn-admin">Admin Account</button> 
+        </div>
+    </div>
 
   <footer class="katoon-footer text-center mt-5 py-4">
       <div class="container">

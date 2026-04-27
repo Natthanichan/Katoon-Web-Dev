@@ -156,6 +156,65 @@
     line-height: 1.2;
 }
 
+
+.modal-content {
+    background-color: #B3EFFF; /
+    padding: 40px;
+    border-radius: 30px;
+    width: 450px;
+    text-align: left; 
+    position: relative;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-title {
+    color: #0181B4; 
+    font-family: "Joti One", serif;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.login-field {
+    margin-bottom: 20px;
+}
+
+.login-field label {
+    display: block;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-field input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+
+.btn-user {
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-family: "Roboto Mono", monospace;
+    margin-top: 10px;
+}
+
+
+.btn-admin {
+    background-color: var(--orange-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-family: "Roboto Mono", monospace;
+}
 /* ===============================
    Footer
    =============================== */
