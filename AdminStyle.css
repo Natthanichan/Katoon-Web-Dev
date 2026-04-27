@@ -1,194 +1,150 @@
-/* Imporing Google font */
 @import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
-
-.joti-one-regular {
-  font-family: "Joti One", serif;
-  font-weight: 200;
-  font-style: normal;
+:root{
+    --blue:#0181B4;
+    --orange:#E3AE79;
+    --gray:#757575;
+    --cream:#FFF5E4;
+    --footer:#F8EAD6;
 }
 
-.roboto-mono-small {
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-:root {
-    /*colot*/
-    --white-color: #fff;
-    --dark-color: #252525;
-    --primary-color: #FFF5E4;
-    --cream-color: #FFF5E4;
-    --secondary-color: #0181B4;
-    --blue-color: #0181B4;
-    --orange-color: #E3AE79;
-    --gray-color: #757575;
-    --gray-color-card: #E8E8E8;
-
-    /*Font size*/
-    --font-size-s: 0.9rem;
-    --font-size-n: 1rem;
-    --font-size-m: 1.12rem;
-    --font-size-l: 1.5rem;
-    --font-size-xl: 2rem;
-    --font-size-xxl: 2.3rem;
-
-    /*Font weight*/
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    
-    /*Border radius*/
-    --border-radius-s: 8px;
-    --border-radius-m: 30px;
-    --border-radius-circle: 50%;
-
-    /*Size max width*/
-    --site-max-width: 1300px;
-
+body{
+    font-family:"Roboto Mono", monospace;
+    min-height:100vh;
 }
 
-/* Grid */
-.container {
-  margin-top: 90px;
-  padding: 30px;
+
+/* MAIN */
+.container{
+    margin-top:90px;
+    padding:30px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 150px);
-    gap: 30px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,180px);
+    gap:30px;
 }
 
-/* Add card */
-.add-card {
-    width: 180px;
-    height: 240px;
-    background: var(--gray-color-card);
-    border-radius: 15px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 2px 3px 3px rgba(0,0,0,0.1);
-
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+/* ADD CARD */
+.add-card{
+    width:180px;
+    height:240px;
+    background:#E8E8E8;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    box-shadow:0 4px 8px rgba(0,0,0,0.08);
 }
 
-.add-card a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+/* POPUP */
+#popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    justify-content:center;
+    align-items:center;
 }
 
-/* Card 
-.card img {
-    width: 150px;
-    height: 200px;
-    border-radius: 20px;
-    object-fit: cover;
+#popup.show{
+    display:flex;
 }
 
-.card p {
-    margin: 5px 0;
+.popup-box{
+    width:90%;
+    max-width:700px;
+    background:#FAE9D9;
+    border-radius:20px;
+    padding:25px;
 }
 
-.genre {
-    font-size: 12px;
-    color: gray;
-} */
-
-/* Popup */
-#popup {
-    display: none;
-    position: fixed;
-    top:0; left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.4);
-
-    justify-content: center;
-    align-items: center;
+.form-group{
+    display:flex;
+    margin-bottom:12px;
+    gap:10px;
 }
 
-#popup.show {
-    display: flex;
-}
-
-.popup-box {
-    width: 90%;
-    max-width: 700px;
-    background: #FAE9D9;
-    border-radius: 20px;
-    padding: 20px;
-}
-
-/* Insite */
-.popup-content {
-    display: flex;
-}
-
-/* Sidebar
-.sidebar {
-    width: 150px;
-    background: #c9dbe0;
-    padding: 10px;
-} */
-
-/* Form */
-.form {
-    flex: 1;
-    padding: 10px;
-}
-
-.form-group {
-    display: flex;
-    align-items: flex-start; 
-    margin-bottom: 10px;
-}
-
-.form-group label {
-    font-family: "Roboto Mono";
-    font-size: var(--font-size-s);
-    padding: 10px;
-    width: 130px;      
-    flex-shrink: 0;     
+.form-group label{
+    width:130px;
+    padding-top:10px;
 }
 
 .form-group input,
 .form-group select,
-.form-group textarea {
-    flex: 1;          
+.form-group textarea{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:12px;
 }
 
-.form input, .form select, .form textarea {
-    font-family: "Roboto Mono";
-    font-size: var(--font-size-s);
-    width: 100%;
-    padding: 10px;
-    border-radius: 15px;
-    border: none;
+.form-group textarea{
+    height:90px;
 }
 
-.form textarea {
-    height: 80px;
+.button-group{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:20px;
 }
 
-.form .button-group {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    width: 100%; 
+.button-group button{
+    padding:10px 16px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
 }
 
-/* Close */
-#closeBtn {
-    cursor: pointer;
-    color: #757575;
+/* FOOTER */
+.katoon-footer{
+    background:var(--footer);
+    margin-top:60px;
+}
+
+.container-footer{
+    max-width:1300px;
+    margin:auto;
+    padding:40px 20px;
+    text-align:center;
+}
+
+#foot-img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.footer-links{
+    margin-bottom:15px;
+    line-height:1.8;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:var(--gray);
+    font-size:14px;
+    margin:0 4px;
+}
+
+.footer-links a:hover{
+    color:var(--blue);
+}
+
+.footer-logo{
+    font-family:"Joti One", serif;
+    color:rgba(1,129,180,.65);
+    font-size:32px;
 }
