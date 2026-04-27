@@ -82,6 +82,39 @@
     border-radius: 15px;
 }
 
+/* ===============================
+   Public Web Service: Quote Box
+   =============================== */
+.quote-title {
+    color: var(--secondary-color);
+    font-family: "Joti One", serif;
+    font-size: var(--font-size-l);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.quote-box {
+    background-color: var(--white-color);
+    border-left: 8px solid var(--orange-color);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#quoteText {
+    font-family: "Roboto Mono", monospace;
+    font-weight: var(--font-weight-bold);
+    color: var(--secondary-color);
+    font-size: var(--font-size-m);
+    margin-bottom: 10px;
+}
+
+#quoteAuthor {
+    font-family: "Roboto Mono", monospace;
+    color: var(--gray-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 /* ===============================
    Daily Section
