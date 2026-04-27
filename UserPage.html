@@ -11,6 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="UserPageStyle.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -34,6 +35,156 @@
               </li>
               <li >
                   <a class="nav-item" href="Team.html" id="TEAM">TEAM</a>
+              </li>
+              <li class="search-item">
+                      <a href="#" class="search">
+                      <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
+                      <lottie-player 
+                          id="searchAnim"
+                          src="/image/navbarIcon/search.json"
+                          background="transparent"
+                          speed="1"
+                          style="width:30px; height: 30px;"
+                      ></lottie-player>
+                  </a>
+              </li>
+              <li class="login-item">
+                  <a href="#" class="login">
+                      <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
+                      <lottie-player 
+                          id="loginAnim"
+                          src="/image/navbarIcon/login.json"
+                          background="transparent"
+                          speed="1"
+                          style="width:35px; height: 35px;"
+                      ></lottie-player>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </header>
+
+<main>
+    <h1 class="section-title">Login Information</h1>
+
+    <div class="profile-card">
+
+        <!-- upload รูป -->
+        <input type="file" id="upload" hidden>
+
+        <label for="upload">
+            <img src="https://via.placeholder.com/100" id="profileImage" class="profile-pic">
+        </label>
+
+        <div class="user-info">
+            <p><strong>Username:</strong> user123</p>
+        </div>
+
+    </div>
+
+    <h1 class="section-title">Nickname</h1>
+
+    <div class="profile-card">
+        <div class="user-info">
+            <p><strong>Nickname:</strong> Toon</p>
+        </div>
+
+        <button class="edit-btn">Edit</button>
+    </div>
+
+    <h1 class="section-title">Email</h1>
+
+    <div class="profile-card column">
+
+        <!-- Email -->
+        <div class="email-row">
+            <div class="user-info">
+                <p><strong>Email:</strong> user@email.com</p>
+            </div>
+            <button class="edit-btn">Add</button>
+        </div>
+
+        <hr>
+
+        <!-- Toggle 1 -->
+        <div class="toggle-row">
+            <span>Service Emails</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Toggle 2 -->
+        <div class="toggle-row">
+            <span>Top Comments/Comments</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+    </div>
+
+    <h1 class="section-title">Coin Information</h1>
+
+    <div class="profile-card coin-card">
+
+        <!-- ซ้าย -->
+        <div class="coin-left">
+            <p class="coin-label">Current coin</p>
+            <h2 class="coin-value">185,428 coin</h2>
+        </div>
+
+        <!-- เส้นแบ่ง -->
+        <div class="divider"></div>
+
+        <!-- ขวา -->
+        <div class="coin-right">
+            <p class="coin-label">Transaction log</p>
+
+            <div class="transaction">
+                <span>20/11/2030</span>
+                <span class="plus">+200</span>
+            </div>
+
+            <div class="transaction">
+                <span>19/11/2030</span>
+                <span class="plus">+30</span>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script>
+document.getElementById("upload").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById("profileImage").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+</script>
+
+  <footer class="katoon-footer">
+      <div class="container-footer">
+          <img id="foot-img" src="image/QR code.png" alt="QR Code">
+          
+          <div class="footer-links">
+              <a href="#">ABOUT</a> | <a href="#">FEEDBACK</a> | <a href="#">HELP</a> | <a href="#">TERMS</a><br>
+              <a href="#">PRIVACY</a> | <a href="#">ADVERTISE</a> | <a href="#">CONTACT</a>
+          </div>
+          
+          <h2 class="footer-logo">KATOON</h2>
+      </div>
+  </footer>
+
+</body>
+</html>
               </li>
               <li class="search-item">
                       <a href="#" class="search">

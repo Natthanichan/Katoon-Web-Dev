@@ -172,3 +172,141 @@ header .navbar {
 .out:active {
     transform: scale(0.9);
 }
+    --font-size-xxl: 2.3rem;
+
+    /*Font weight*/
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /*Border radius*/
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    /*Size max width*/
+    --site-max-width: 1300px;
+
+}
+
+
+body {
+    background: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    background: var(--primary-color);
+    border-bottom: 2px solid #e5d5c5;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* à¸›à¸¸à¹ˆà¸¡ hamburger */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+header .navbar {
+    height: 100px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-logo .logo-text {
+    color: var(--blue-color-font);
+    font-family: "Joti One";
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.144);
+    text-decoration: none 
+}
+
+.nav-menu{
+    font-family: "Roboto Mono";
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;        
+    padding: 0;       
+    align-items: center;
+    margin-left: 10px; 
+    margin-right: auto;
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-menu .nav-item {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-color);
+    text-decoration: none;
+    transition: 0.1s;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu .nav-item:hover {
+    color: var(--orange-color);
+}
+
+.nav-menu .nav-item.active {
+    color: var(--orange-color);
+}
+
+.search {
+    transition: 0.2s;
+}
+
+.nav-menu li.search-item {
+    margin-left: auto;
+}
+
+.search:active {
+    transform: scale(0.9);
+}
+
+.login {
+    transition: 0.2s;
+}
+
+.nav-menu li.login-item {
+    margin-left: 0;
+}
+
+.login:active {
+    transform: scale(0.9);
+}
+
+.out {
+    transition: 0.2s;
+}
+
+.nav-menu li.out-item {
+    margin-left: auto;
+}
+
+.out:active {
+    transform: scale(0.9);
+}

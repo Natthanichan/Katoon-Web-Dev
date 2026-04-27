@@ -249,3 +249,218 @@ hr {
     color: #27ae60;
     font-weight: bold;
 }
+    --font-size-xxl: 2.3rem;
+
+    /*Font weight*/
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /*Border radius*/
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    /*Size max width*/
+    --site-max-width: 1300px;
+
+}
+
+/* ===== Profile Section ===== */
+main {
+    padding-top: 120px;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: none;
+}
+
+/* กล่องโปรไฟล์ */
+.profile-card {
+    background: var(--white-color);
+    border-radius: var(--border-radius-m);
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+    width: 100%;        /* สำคัญมาก 👉 ให้ยาวเต็ม */
+    max-width: none;    /* เอาขีดจำกัดออก */
+    margin: 20px 0;     /* ชิดซ้าย */
+}
+
+
+/* รูปโปรวงกลม */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius-circle);
+    object-fit: cover;
+    cursor: pointer;
+
+    border: 3px solid var(--blue-color);
+    transition: 0.3s ease;
+}
+
+/* hover รูป */
+.profile-pic:hover {
+    transform: scale(1.05);
+    border-color: var(--orange-color);
+}
+
+/* ข้อมูล user */
+.user-info {
+    font-family: "Roboto Mono";
+    font-size: var(--font-size-m);
+    color: var(--dark-color);
+}
+
+.section-title {
+    color: var(--blue-color);
+    font-family: "Roboto Mono";
+}
+
+.edit-btn {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radius-s);
+    background: var(--blue-color);
+    color: white;
+    cursor: pointer;
+    font-family: "Roboto Mono";
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background: var(--orange-color);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-left: auto;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background-color: var(--blue-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* ให้ card เรียงแนวตั้ง */
+.profile-card.column {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* แถว email */
+.email-row {
+    display: flex;
+    align-items: center;
+}
+
+/* แถว toggle */
+.toggle-row {
+    display: flex;
+    justify-content: space-between; /* ดันซ้าย-ขวา */
+    align-items: center;
+    margin-top: 10px;
+    font-family: "Roboto Mono";
+    color: var(--gray-color);
+}
+
+/* เส้นคั่น */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+/* Coin layout */
+.coin-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ซ้าย */
+.coin-left {
+    flex: 1;
+}
+
+.coin-label {
+    font-family: "Roboto Mono";
+    color: var(--gray-color);
+    margin-bottom: 5px;
+}
+
+.coin-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+/* เส้นแบ่ง */
+.divider {
+    width: 1px;
+    height: 60px;
+    background: #ddd;
+    margin: 0 20px;
+}
+
+/* ขวา */
+.coin-right {
+    flex: 1;
+}
+
+/* transaction list */
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Roboto Mono";
+    margin-top: 5px;
+}
+
+/* สีเขียว */
+.plus {
+    color: #27ae60;
+    font-weight: bold;
+}
