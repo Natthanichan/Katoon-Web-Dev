@@ -25,7 +25,7 @@
     --secondary-color: #0181B4;
     --blue-color-font: rgba(1, 129, 180, 0.626);
     --blue-color: #0181B4;
-    --orange-color: #E3AE79;
+    --orange-color: #f4bf89;
     --gray-color: #757575;
 
     /*Font size*/
@@ -63,7 +63,7 @@
 }
 
 .search-card-ui {
-    background-color: var(--card-bg);
+    background-color: var(--orange-color);
     border-radius: 25px;
     padding: 40px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
