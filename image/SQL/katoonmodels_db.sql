@@ -9,51 +9,55 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 drop database if exists `katoonmodels_db`;
-CREATE DATABASE `katoonmodels_db` DEFAULT CHARACTER SET utf8mb4;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`katoonmodels_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `katoonmodels_db`;
 
+-- DROP TABLE 
 DROP TABLE IF EXISTS manage_Author;
 DROP TABLE IF EXISTS contain_Author;
-DROP TABLE IF EXISTS Transactions;
+DROP TABLE IF EXISTS Transaction;
 DROP TABLE IF EXISTS Image;
 DROP TABLE IF EXISTS Admin_Account;
 DROP TABLE IF EXISTS Admin;
 DROP TABLE IF EXISTS Episode;
 DROP TABLE IF EXISTS Author;
-DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Katoon;
 
 -- TABLE: Katoon
+
 CREATE TABLE Katoon (
     katoon_ID INT PRIMARY KEY,
     title VARCHAR(200) NOT NULL,
     status VARCHAR(20),
     category VARCHAR(100),
-    description TEXT,
-    release_day VARCHAR(20),
-    cover_image VARCHAR(255)
+    description VARCHAR(100),
+    release_day VARCHAR(20)
 );
 
 INSERT INTO Katoon VALUES
-(1,'my body has been possessed by someone','Ongoing','Fantasy','lorem ipsum dolor sit amet, consectetur adipiscing elit','Monday','image/my body has been possessed by someone.jpg'),
-(2,'my clueless love diary','Completed','Romance','lorem ipsum dolor sit amet','Tuesday','image/my clueless love diary.JPG'),
-(3,'My Secretly Hot Husband','Ongoing','Romance','lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','Wednesday','image/My Secretly Hot Husband.jpg'),
-(4,'night owls summer skies','Completed','Slice of Life','lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor','Thursday','image/night owls summer skies.png'),
-(5,'omniscient reader','Ongoing','Fantasy','lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam','Friday','image/omniscient reader.PNG'),
-(6,'one husband is enough','Completed','Romance','lorem ipsum dolor sit amet, consectetur adipiscing elit','Saturday','image/one husband is enough.jpg'),
-(7,'our secret alliance','Ongoing','Romance','lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt','Sunday','image/our secret alliance.JPG'),
-(8,'A Beast Tamed By The Villainess','Completed','Drama','lorem ipsum dolor sit amet','Monday','image/A Beast Tamed By The Villainess.jpg'),
-(10,'sweet home','Completed','Horror','lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore','Wednesday','image/sweet home.PNG'),
-(11,'The First Night With The Duke','Ongoing','Romance','lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','Friday','image/The First Night With The Duke.jpg'),
-(12,'The Greatest Estate Developer','Completed','Comedy','lorem ipsum dolor sit amet','Tuesday','image/The Greatest Estate Developer.JPG'),
-(13,'the little revenge plan of a villainess','Ongoing','Fantasy','lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation','Thursday','image/the little revenge plan of a villainess.jpg'),
-(14,'the mad bloodhound’s dying master','Completed','Action','lorem ipsum dolor sit amet, consectetur adipiscing elit','Saturday','image/the mad bloodhound_s dying master.jpg'),
-(15,'the time limited villainess wishes for the f...','Ongoing','Fantasy','lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat','Sunday','image/the time limited villainess wishes for the fall of the empire.jpg'),
-(16,'to you who killed me','Completed','Drama','lorem ipsum dolor sit amet','Monday','image/to you who killed me.jpg'),
-(17,'welcome to the rose mansion','Ongoing','Horror','lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','Thursday','image/welcome to the rose mansion.JPG'),
-(18,'your letter','Completed','Romance','lorem ipsum dolor sit amet, consectetur adipiscing elit','Tuesday','image/your letter.JPG');
+(1,'my body has been possessed by someone','Ongoing','Fantasy','lorem ipsum','Monday'),
+(2,'my clueless love diary','Completed','Romance','lorem ipsum','Tuesday'),
+(3,'My Secretly Hot Husband','Ongoing','Romance','lorem ipsum','Wednesday'),
+(4,'night owls summer skies','Completed','Slice of Life','lorem ipsum','Thursday'),
+(5,'omniscient reader','Ongoing','Fantasy','lorem ipsum','Friday'),
+(6,'one husband is enough','Completed','Romance','lorem ipsum','Saturday'),
+(7,'our secret alliance','Ongoing','Romance','lorem ipsum','Sunday'),
+(8,'A Beast Tamed By The Villainess','Completed','Drama','lorem ipsum','Monday'),
+(10,'sweet home','Completed','Horror','lorem ipsum','Wednesday'),
+(11,'The First Night With The Duke','Ongoing','Romance','lorem ipsum','Friday'),
+(12,'The Greatest Estate Developer','Completed','Comedy','lorem ipsum','Tuesday'),
+(13,'the little revenge plan of a villainess','Ongoing','Fantasy','lorem ipsum','Thursday'),
+(14,'the mad bloodhound’s dying master','Completed','Action','lorem ipsum','Saturday'),
+(15,'the time limited villainess wishes for the f...','Ongoing','Fantasy','lorem ipsum','Sunday'),
+(16,'to you who killed me','Completed','Drama','lorem ipsum','Monday'),
+(17,'welcome to the rose mansion','Ongoing','Horror','lorem ipsum','Thursday'),
+(18,'your letter','Completed','Romance','lorem ipsum','Tuesday');
 
+
+-- =====================
 -- TABLE: Users
+-- =====================
 CREATE TABLE Users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     password VARCHAR(100),
@@ -74,7 +78,9 @@ INSERT INTO Users (password,email,name,coin_info) VALUES
 ('pass9','u9@mail.com','User9',90),
 ('pass10','u10@mail.com','User10',110);
 
+-- =====================
 -- TABLE: Author
+-- =====================
 CREATE TABLE Author (
     pen_name VARCHAR(100) PRIMARY KEY,
     email VARCHAR(100),
@@ -95,7 +101,9 @@ INSERT INTO Author VALUES
 ('Pen9','a9@mail.com','999','0899999999','Author9'),
 ('Pen10','a10@mail.com','1010','0810101010','Author10');
 
+-- =====================
 -- TABLE: Episode
+-- =====================
 CREATE TABLE Episode (
     episode_id INT PRIMARY KEY,
     rating INT,
@@ -121,7 +129,9 @@ INSERT INTO Episode VALUES
 (204,3,0,'Romance',2,4,'Pen2'),
 (205,5,1,'Romance',2,5,'Pen2');
 
+-- =====================
 -- TABLE: Admin
+-- =====================
 CREATE TABLE Admin (
     email VARCHAR(100) PRIMARY KEY,
     fname VARCHAR(100),
@@ -142,7 +152,9 @@ INSERT INTO Admin VALUES
 ('admin9@mail.com','I','Nine',26,'BKK'),
 ('admin10@mail.com','J','Ten',38,'BKK');
 
+-- =====================
 -- TABLE: Admin_Account
+-- =====================
 CREATE TABLE Admin_Account (
     username VARCHAR(100) PRIMARY KEY,
     password VARCHAR(100),
@@ -164,7 +176,9 @@ INSERT INTO Admin_Account VALUES
 ('admin09','pass','2024-01-09','normal','admin9@mail.com'),
 ('admin10','pass','2024-01-10','super','admin10@mail.com');
 
+-- =====================
 -- TABLE: Image
+-- =====================
 CREATE TABLE Image (
     image_id INT PRIMARY KEY AUTO_INCREMENT,
     image_url VARCHAR(255),
@@ -172,18 +186,20 @@ CREATE TABLE Image (
 );
 
 INSERT INTO Image (image_url,image_type) VALUES
-('images/my body has been possessed by someone.jpg','cover'),
-('images/my clueless love diary.JPG','cover'),
-('images/My Secretly Hot Husband.jpg','cover'),
-('images/night owls summer skies.png','cover'),
-('images/omniscient reader.PNG','cover'),
-('images/one husband is enough.jpg','cover'),
-('images/our secret alliance.JPG','cover'),
-('images/A Beast Tamed By The Villainess.jpg','cover'),
-('images/sweet home.PNG','cover'),
-('images/your letter.JPG','cover');
+('images/1.jpg','cover'),
+('images/2.jpg','cover'),
+('images/3.jpg','cover'),
+('images/4.jpg','cover'),
+('images/5.jpg','cover'),
+('images/6.jpg','cover'),
+('images/7.jpg','cover'),
+('images/8.jpg','cover'),
+('images/9.jpg','cover'),
+('images/10.jpg','cover');
 
+-- =====================
 -- TABLE: Transactions
+-- =====================
 CREATE TABLE Transactions (
     transaction_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
@@ -204,7 +220,9 @@ INSERT INTO Transactions (user_id,amount_money,tran_date) VALUES
 (9,90,'2024-01-09'),
 (10,110,'2024-01-10');
 
+-- =====================
 -- TABLE: contain_Author
+-- =====================
 CREATE TABLE contain_Author (
     katoon_ID INT,
     user_id INT,
@@ -224,10 +242,12 @@ INSERT INTO contain_Author VALUES
 (6,6,'Pen6'),
 (7,7,'Pen7'),
 (8,8,'Pen8'),
-(10,10,'Pen10'),
-(11,1,'Pen1');
+(9,9,'Pen9'),
+(10,10,'Pen10');
 
+-- =====================
 -- TABLE: manage_Author
+-- =====================
 CREATE TABLE manage_Author (
     katoon_ID INT,
     username VARCHAR(100),
@@ -245,5 +265,9 @@ INSERT INTO manage_Author VALUES
 (6,'admin06'),
 (7,'admin07'),
 (8,'admin08'),
-(10,'admin09'),
-(11,'admin10');
+(9,'admin09'),
+(10,'admin10');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
