@@ -11,6 +11,7 @@ app.use(express.json());
 // ให้ browser เปิดรูปจาก folder image ได้
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/image", express.static(path.join(__dirname, "image")));
+app.use("/images", express.static("images"));
 
 const db = mysql.createConnection({
   host: "localhost",
