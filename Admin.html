@@ -4,85 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <!-- Linking Font Awesome for icons-->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="AdminStyle.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="AdminStyle.css">
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-    <!-- .JS-->
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <ul class="nav-menu">
-                <li>
+
+<header>
+    <div class="navbar">
+        <ul class="nav-menu">
+            <li>
                 <a href="Homepage.html" class="nav-logo">
                     <span class="logo-text">KATOON</span>
                 </a>
-                </li>
-                <li>
-                    <a class="nav-item active" href="#" id="AdminDashboard">ADMIN DASHBOARD</a>
-                </li>
-                <li class="out-item">
-                    <a href="#" class="out">
-                    <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
-                    <lottie-player 
-                        id="outAnim"
+            </li>
+
+            <li>
+                <a class="nav-item active" href="#">ADMIN DASHBOARD</a>
+            </li>
+
+            <li class="out-item">
+                <a href="#">
+                    <lottie-player
                         src="/image/navbarIcon/out.json"
                         background="transparent"
                         speed="1"
-                        style="width:30px; height: 30px;"
-                    ></lottie-player>
+                        style="width:30px; height:30px;">
+                    </lottie-player>
                 </a>
-                </li>
-            </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <div class="grid">
+
+        <!-- ADD CARD -->
+        <div class="add-card" id="addBtn">
+            <a href="#">
+                <lottie-player
+                    src="/image/navbarIcon/add.json"
+                    background="transparent"
+                    speed="1"
+                    style="width:35px; height:35px;">
+                </lottie-player>
+            </a>
         </div>
-    </header>
 
-    <div class="container">
-        <div class="grid">
-            <!-- Add new -->
-            <div class="add-card" id="addBtn">
-                <a href="#" class="login">
-                    <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
-                    <lottie-player 
-                        id="addAnim"
-                        src="/image/navbarIcon/add.json"
-                        background="transparent"
-                        speed="1"
-                        style="width:35px; height: 35px;"
-                    ></lottie-player>
-                </a>
-            </div>
-
-            <!-- Card 
-            <div class="card">
-                <img src="https://via.placeholder.com/150x200">
-                <p class="genre">School life</p>
-                <p>Your Letter</p>
-            </div>
-
-            <div class="card">
-                <img src="https://via.placeholder.com/150x200">
-                <p class="genre">Romance</p>
-                <p>Our Secret Alliance</p>
-            </div>
-
+        <!-- ตัวอย่าง card -->
+        <!--
+        <div class="card">
+            <img src="image/test.jpg">
+            <p class="genre">Romance</p>
+            <p>Your Letter</p>
         </div>
-    </div> -->
+        -->
 
-    <!-- POPUP -->
-    <div id="popup">
+    </div>
+
+</div>
+
+
+<!-- POPUP -->
+<div id="popup">
     <div class="popup-box">
+
         <span id="closeBtn">←</span>
 
         <div class="popup-content">
-            <!-- Form -->
+
             <div class="form">
+
                 <div class="form-group">
                     <label>Cover Picture</label>
                     <input type="file">
@@ -133,9 +135,34 @@
                     <button>Update</button>
                     <button>Save</button>
                 </div>
+
             </div>
         </div>
     </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="katoon-footer">
+    <div class="container-footer">
+
+        <img id="foot-img" src="image/QR code.png" alt="QR Code">
+
+        <div class="footer-links">
+            <a href="#">ABOUT</a> |
+            <a href="#">FEEDBACK</a> |
+            <a href="#">HELP</a> |
+            <a href="#">TERMS</a><br>
+
+            <a href="#">PRIVACY</a> |
+            <a href="#">ADVERTISE</a> |
+            <a href="#">CONTACT</a>
+        </div>
+
+        <h2 class="footer-logo">KATOON</h2>
+
     </div>
+</footer>
+
 </body>
 </html>
