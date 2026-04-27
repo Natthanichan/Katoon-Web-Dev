@@ -52,68 +52,38 @@
 
 }
 
-/* ===== TEAM SECTION ===== */
-
-.container {
-    max-width: var(--site-max-width);
-    margin: 120px auto 0;
-    padding: 40px;
-    text-align: center;
-
-    flex: 1;
-    min-height: calc(90vh - 100px); /* ⭐ หัก navbar ออก */
+/* ===============================
+   Footer
+   =============================== */
+.katoon-footer {
+    background-color: #F8EAD6; 
+    border-top: 1px solid #EFE4D6;
 }
 
-/* Title */
-.team-title {
-    font-family: "Roboto Mono";
-    color: var(--blue-color);
+.katoon-footer .container #foot-img {
+    width: 80px;         
+    height: 80px;       
+    object-fit: contain; 
+    /*border-radius: var(--border-radius-s); */
+    display: block;     
+    margin: 0 auto 15px; 
+}
+
+.footer-logo {
+    font-family: "Joti One", serif; 
+    color: var(--blue-color-font);  
     font-size: var(--font-size-xl);
-    margin-bottom: 50px;
+    margin-top: 10px;
 }
 
-/* Layout ทีม */
-.team {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* Card */
-.card {
-    font-family: "Roboto Mono";
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-/* img */
-.card img {
-    width: 160px;
-    height: 160px;
-    border-radius: var(--border-radius-m);
-    object-fit: cover;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.15);
-}
-
-
-.card h3 {
-    margin-top: 12px;
-    font-size: var(--font-size-m);
-}
-
-.card p {
+.footer-links a {
+    text-decoration: none;
+    color: var(--gray-color); 
+    font-family: "Roboto Mono", monospace;
     font-size: var(--font-size-s);
-    color: var(--gray-color);
+    margin: 0 5px;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-}
-
-/* container ขวา */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.footer-links a:hover {
+    color: var(--secondary-color);
 }
