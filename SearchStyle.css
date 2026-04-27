@@ -175,3 +175,12 @@ header {
 
 .footer-logo { font-family: "Joti One"; color: var(--blue-font); }
 .footer-links a { color: var(--gray-text); text-decoration: none; margin: 0 10px; font-size: 0.9rem;}
+
+.katoon-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background: #eee;
+}
