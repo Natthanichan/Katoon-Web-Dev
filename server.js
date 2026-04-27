@@ -8,11 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ให้ browser เปิดรูปจาก folder image ได้
-app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/image", express.static(path.join(__dirname, "image")));
-app.use("/images", express.static("images"));
-app.use("/image", express.static("image"));
+app.use("/images", express.static(path.join(__dirname, "images")));
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -29,18 +26,11 @@ db.connect((err) => {
   console.log("Connected to MySQL");
 });
 
-// GET all + search
 app.get("/api/katoons", (req, res) => {
   const { keyword, searchBy, category, status } = req.query;
 
   let sql = `
-    SELECT 
-      katoon_ID,
-      title,
-      status,
-      category,
-      description,
-      cover_image
+    SELECT katoon_ID, title, status, category, description, release_day, cover_image
     FROM Katoon
     WHERE 1=1
   `;
@@ -77,6 +67,27 @@ app.get("/api/katoons", (req, res) => {
     }
 
     res.json(results);
+  });
+});
+
+app.get("/api/katoons/:id", (req, res) => {
+  const sql = `
+    SELECT katoon_ID, title, status, category, description, release_day, cover_image
+    FROM Katoon
+    WHERE katoon_ID = ?
+  `;
+
+  db.query(sql, [req.params.id], (err, results) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Database error" });
+    }
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: "Katoon not found" });
+    }
+
+    res.json(results[0]);
   });
 });
 
