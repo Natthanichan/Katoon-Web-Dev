@@ -1,0 +1,103 @@
+/* ============================================================
+   TOP BREAD: GLOBAL THEME (Matches SearchStyle.css)
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --primary-bg: #FFF5E4;
+    --orange-highlight: #E3AE79;
+    --blue-font: #0181B4;
+    --gray-text: #757575;
+}
+
+body { background-color: var(--primary-bg); font-family: "Roboto Mono", monospace; margin: 0; }
+
+/* NAVBAR & FOOTER CSS (Same as before) */
+header { background: var(--primary-bg); height: 100px; border-bottom: 1px solid #e5d5c5; position: fixed; top: 0; width: 100%; z-index: 1000; }
+.navbar { display: flex; align-items: center; height: 100%; padding: 0 40px; }
+.logo-text { color: var(--blue-font); font-family: "Joti One"; font-size: 2rem; text-decoration: none; }
+.nav-menu { display: flex; gap: 40px; list-style: none; margin: 0; align-items: center; width: 100%; }
+.nav-item { color: var(--gray-text); text-decoration: none; font-weight: bold; }
+.search-item { margin-left: auto; }
+
+/* ============================================================
+   THE MEAT: RESULT PAGE UI
+   ============================================================ */
+
+.result-main-wrapper { margin-top: 140px; padding-bottom: 80px; }
+
+/* Slim Search Summary Bar from Image 2 */
+.search-summary-bar {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.summary-box {
+    background: white;
+    border: 2px solid var(--orange-highlight);
+    border-radius: 25px;
+    padding: 8px 25px;
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.search-term { color: var(--gray-text); }
+
+.pill-display {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 8px 20px;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+/* Grid Header */
+.all-label {
+    color: var(--blue-font);
+    font-weight: 900;
+    font-size: 1.4rem;
+    margin-right: 10px;
+}
+
+.series-count { color: #8EC3D8; font-size: 0.9rem; }
+.view-all-link { color: #8EC3D8; text-decoration: none; font-size: 0.9rem; }
+
+/* Comic Cards (Updated for Image 2) */
+.katoon-card {
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.katoon-card:hover { transform: translateY(-5px); }
+
+.img-container .img-placeholder {
+    background: #ccc;
+    height: 260px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.comic-title {
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comic-author, .comic-stats {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    margin: 0;
+}
+
+/* ============================================================
+   BOTTOM BREAD: FOOTER (Matches SearchStyle.css)
+   ============================================================ */
+.katoon-footer { border-top: 1px solid #e5d5c5; padding-top: 40px; }
+.footer-logo { font-family: "Joti One"; color: var(--blue-font); }
+.footer-links a { color: var(--gray-text); text-decoration: none; margin: 0 10px; font-size: 0.9rem; }

@@ -1,0 +1,177 @@
+/* ============================================================
+   TOP BREAD: GROUP THEME & NAVBAR
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --primary-bg: #FFF5E4;
+    --card-bg: #F8EAD6;
+    --blue-font: #0181B4;
+    --gray-text: #757575;
+    --orange-highlight: #E3AE79;
+}
+
+body {
+    background-color: var(--primary-bg);
+    font-family: "Roboto Mono", monospace;
+    margin: 0;
+}
+
+header {
+    background: var(--primary-bg);
+    height: 100px;
+    border-bottom: 1px solid #e5d5c5;
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+}
+
+.navbar { display: flex; align-items: center; height: 100%; padding: 0 40px; }
+
+.logo-text {
+    color: var(--blue-font);
+    font-family: "Joti One";
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex; gap: 40px; list-style: none; margin: 0; align-items: center; width: 100%;
+}
+
+.nav-item { color: var(--gray-text); text-decoration: none; font-weight: bold; }
+.search-item { margin-left: auto; }
+
+/* ============================================================
+   THE MEAT: YOUR UPDATED SEARCH UI
+   ============================================================ */
+
+.search-main-wrapper {
+    margin-top: 150px;
+    padding-bottom: 100px;
+}
+
+.search-card-ui {
+    background-color: var(--card-bg);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.search-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.label-text {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Matching the wide inputs in your prototype */
+.custom-dropdown {
+    width: 180px;
+    background: white;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+
+.custom-dropdown .selected {
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 110%; left: 0; width: 100%;
+    background: white; border-radius: 12px;
+    list-style: none; padding: 0; display: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.custom-dropdown.active .dropdown-options { display: block; }
+.dropdown-options li { padding: 10px 15px; }
+.dropdown-options li:hover { background: var(--orange-highlight); color: white; }
+
+/* The long search bar */
+.search-input-box {
+    position: relative;
+    width: 100%;
+}
+
+.search-input-box input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+.search-input-box button {
+    position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
+    border: none; background: none; color: #757575;
+}
+
+/* The Blank History Box as per your prototype */
+.history-box-wrapper {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    min-height: 250px; /* Big blank area for now */
+    border: 1px solid #f0f0f0;
+}
+
+/* Placeholder for your team's images */
+.katoon-card-proto .img-placeholder {
+    background: #eee;
+    height: 280px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.daily-title {
+    color: var(--blue-font);
+    font-family: "Joti One";
+}
+
+.katoon-card-proto {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.katoon-card-proto:hover {
+    transform: translateY(-5px); /* Adds a little pop when hovering */
+}
+
+.proto-category {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    display: block;
+    margin-top: 5px;
+}
+
+.proto-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #252525;
+    margin: 0;
+}
+
+/* ============================================================
+   BOTTOM BREAD: FOOTER
+   ============================================================ */
+.katoon-footer {
+    border-top: 1px solid #e5d5c5;
+    padding-top: 40px;
+}
+
+.footer-logo { font-family: "Joti One"; color: var(--blue-font); }
+.footer-links a { color: var(--gray-text); text-decoration: none; margin: 0 10px; font-size: 0.9rem;}
