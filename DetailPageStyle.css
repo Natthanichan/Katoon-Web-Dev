@@ -160,7 +160,21 @@ body {
 
 
 
-/* ===== DETAIL PAGE ===== */
+    /*Font weight*/
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /*Border radius*/
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    /*Size max width*/
+    --site-max-width: 1300px;
+
+    /* ===== DETAIL PAGE ===== */
 
 body {
     margin: 0;
@@ -266,5 +280,3 @@ body {
     margin-top: 10px;
     line-height: 1.6;
 }
-
-
