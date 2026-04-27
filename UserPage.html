@@ -1,219 +1,247 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UserPage</title>
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="UserPageStyle.css">
+:root{
+    --white: #ffffff;
+    --dark: #252525;
+    --blue: #0181B4;
+    --blue-soft: rgba(1,129,180,.65);
+    --orange: #E3AE79;
+    --gray: #757575;
+    --footer: #F8EAD6;
+    --radius: 30px;
+}
 
-    <!-- Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="script.js"></script>
-</head>
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<body>
+/* BODY */
+body{
+    font-family: "Roboto Mono", monospace;
+    background: #FFF5E4;
+}
 
-    <!-- Header -->
-    <header>
-        <div class="navbar">
-            <ul class="nav-menu">
+/* MAIN */
+main{
+    padding: 120px 40px 40px;
+}
 
-                <li>
-                    <a href="Homepage.html" class="nav-logo">
-                        <span class="logo-text">KATOON</span>
-                    </a>
-                </li>
+.section-title{
+    font-size: 30px;
+    color: var(--blue);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
 
-                <li>
-                    <a class="nav-item" href="Homepage.html">ORIGINAL</a>
-                </li>
+/* CARD */
+.profile-card{
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 25px;
 
-                <li>
-                    <a class="nav-item" href="Team.html">TEAM</a>
-                </li>
+    display: flex;
+    align-items: center;
+    gap: 20px;
 
-                <li class="search-item">
-                    <a href="#">
-                        <lottie-player
-                            src="/image/navbarIcon/search.json"
-                            background="transparent"
-                            speed="1"
-                            style="width:30px; height:30px;">
-                        </lottie-player>
-                    </a>
-                </li>
+    box-shadow: 0 5px 14px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
 
-                <li class="login-item">
-                    <a href="#">
-                        <lottie-player
-                            src="/image/navbarIcon/login.json"
-                            background="transparent"
-                            speed="1"
-                            style="width:35px; height:35px;">
-                        </lottie-player>
-                    </a>
-                </li>
+.profile-card.column{
+    flex-direction: column;
+    align-items: stretch;
+}
 
-            </ul>
-        </div>
-    </header>
+/* PROFILE PIC */
+.profile-pic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 
-    <!-- Main -->
-    <main>
+    border: 3px solid var(--blue);
+    cursor: pointer;
+    transition: .3s;
+}
 
-        <!-- Login -->
-        <h1 class="section-title">Login Information</h1>
+.profile-pic:hover{
+    transform: scale(1.05);
+    border-color: var(--orange);
+}
 
-        <div class="profile-card">
+/* TEXT */
+.user-info{
+    font-size: 18px;
+    color: var(--dark);
+}
 
-            <input type="file" id="upload" hidden>
+/* BUTTON */
+.edit-btn{
+    margin-left: auto;
+    padding: 10px 18px;
 
-            <label for="upload">
-                <img
-                    src="https://via.placeholder.com/100"
-                    id="profileImage"
-                    class="profile-pic"
-                >
-            </label>
+    border: none;
+    border-radius: 10px;
 
-            <div class="user-info">
-                <p><strong>Username:</strong> user123</p>
-            </div>
+    background: var(--blue);
+    color: #fff;
 
-        </div>
+    cursor: pointer;
+    font-family: "Roboto Mono", monospace;
+    transition: .3s;
+}
 
-        <!-- Nickname -->
-        <h1 class="section-title">Nickname</h1>
+.edit-btn:hover{
+    background: var(--orange);
+}
 
-        <div class="profile-card">
+/* EMAIL */
+.email-row{
+    display: flex;
+    align-items: center;
+}
 
-            <div class="user-info">
-                <p><strong>Nickname:</strong> Toon</p>
-            </div>
+hr{
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
 
-            <button class="edit-btn">Edit</button>
+/* TOGGLE */
+.toggle-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        </div>
+    margin: 10px 0;
+    color: var(--gray);
+}
 
-        <!-- Email -->
-        <h1 class="section-title">Email</h1>
+.switch{
+    position: relative;
+    width: 50px;
+    height: 25px;
+}
 
-        <div class="profile-card column">
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
 
-            <div class="email-row">
+.slider{
+    position: absolute;
+    inset: 0;
 
-                <div class="user-info">
-                    <p><strong>Email:</strong> user@email.com</p>
-                </div>
+    background: #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
 
-                <button class="edit-btn">Add</button>
+.slider::before{
+    content: "";
+    position: absolute;
 
-            </div>
+    width: 19px;
+    height: 19px;
+    left: 3px;
+    bottom: 3px;
 
-            <hr>
+    background: #fff;
+    border-radius: 50%;
+    transition: .3s;
+}
 
-            <div class="toggle-row">
-                <span>Service Emails</span>
+.switch input:checked + .slider{
+    background: var(--blue);
+}
 
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider"></span>
-                </label>
-            </div>
+.switch input:checked + .slider::before{
+    transform: translateX(24px);
+}
 
-            <div class="toggle-row">
-                <span>Top Comments / Comments</span>
+/* COIN */
+.coin-card{
+    justify-content: space-between;
+}
 
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider"></span>
-                </label>
-            </div>
+.coin-left,
+.coin-right{
+    flex: 1;
+}
 
-        </div>
+.coin-label{
+    color: var(--gray);
+    margin-bottom: 6px;
+}
 
-        <!-- Coin -->
-        <h1 class="section-title">Coin Information</h1>
+.coin-value{
+    font-size: 32px;
+    color: var(--dark);
+}
 
-        <div class="profile-card coin-card">
+.divider{
+    width: 1px;
+    height: 70px;
+    background: #ddd;
+    margin: 0 25px;
+}
 
-            <div class="coin-left">
-                <p class="coin-label">Current coin</p>
-                <h2 class="coin-value">185,428 coin</h2>
-            </div>
+.transaction{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
 
-            <div class="divider"></div>
+.plus{
+    color: #27ae60;
+    font-weight: bold;
+}
 
-            <div class="coin-right">
+/* FOOTER */
+.katoon-footer{
+    background: var(--footer);
+    margin-top: 60px;
+}
 
-                <p class="coin-label">Transaction log</p>
+.container-footer{
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
 
-                <div class="transaction">
-                    <span>20/11/2030</span>
-                    <span class="plus">+200</span>
-                </div>
+#foot-img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
 
-                <div class="transaction">
-                    <span>19/11/2030</span>
-                    <span class="plus">+30</span>
-                </div>
+.footer-links{
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
 
-            </div>
+.footer-links a{
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 14px;
+    margin: 0 5px;
+}
 
-        </div>
+.footer-links a:hover{
+    color: var(--blue);
+}
 
-    </main>
-
-    <!-- Footer -->
-    <footer class="katoon-footer">
-
-        <div class="container-footer">
-
-            <img
-                id="foot-img"
-                src="image/QR code.png"
-                alt="QR Code"
-            >
-
-            <div class="footer-links">
-                <a href="#">ABOUT</a> |
-                <a href="#">FEEDBACK</a> |
-                <a href="#">HELP</a> |
-                <a href="#">TERMS</a>
-                <br>
-
-                <a href="#">PRIVACY</a> |
-                <a href="#">ADVERTISE</a> |
-                <a href="#">CONTACT</a>
-            </div>
-
-            <h2 class="footer-logo">KATOON</h2>
-
-        </div>
-
-    </footer>
-
-    <!-- Upload Image Script -->
-    <script>
-        document.getElementById("upload").addEventListener("change", function(event) {
-            const file = event.target.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    document.getElementById("profileImage").src = e.target.result;
-                };
-
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
-
-</body>
-</html>
+.footer-logo{
+    font-family: "Joti One", serif;
+    font-size: 32px;
+    color: var(--blue-soft);
+}
