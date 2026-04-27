@@ -1,5 +1,32 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.3"
+  },
+  "name": "katoon-web-dev",
+  "version": "1.0.0",
+  "description": "Web dev",
+  "main": "script.js",
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Natthanichan/Katoon-Web-Dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Natthanichan/Katoon-Web-Dev/issues"
+  },
+  "homepage": "https://github.com/Natthanichan/Katoon-Web-Dev#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
