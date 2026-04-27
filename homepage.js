@@ -22,11 +22,13 @@ async function loadHomepageKatoons() {
     selected.forEach((katoon) => {
       homeGrid.innerHTML += `
         <div class="col">
-          <article class="katoon-card">
-            <img src="${katoon.cover_image}" alt="${katoon.title}">
-            <div class="katoon-category">${katoon.category}</div>
-            <div class="katoon-title">${katoon.title}</div>
-          </article>
+          <a href="DetailPage.html?id=${katoon.katoon_ID}" style="text-decoration:none; color:inherit;">
+            <article class="katoon-card">
+              <img src="${katoon.cover_image}" alt="${katoon.title}">
+              <div class="katoon-category">${katoon.category}</div>
+              <div class="katoon-title">${katoon.title}</div>
+            </article>
+          </a>
         </div>
       `;
     });
