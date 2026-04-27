@@ -94,3 +94,51 @@ app.get("/api/katoons/:id", (req, res) => {
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");
 });
+
+// USER LOGIN
+app.post("/api/login/user", (req, res) => {
+  const { username, password } = req.body;
+
+  const sql = `
+    SELECT user_id, name
+    FROM Users
+    WHERE name = ? AND password = ?
+  `;
+
+  db.query(sql, [username, password], (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error" });
+
+    if (results.length === 0) {
+      return res.status(401).json({ message: "Invalid user login" });
+    }
+
+    res.json({
+      role: "user",
+      user: results[0]
+    });
+  });
+});
+
+// ADMIN LOGIN
+app.post("/api/login/admin", (req, res) => {
+  const { username, password } = req.body;
+
+  const sql = `
+    SELECT username, role
+    FROM Admin_Account
+    WHERE username = ? AND password = ?
+  `;
+
+  db.query(sql, [username, password], (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error" });
+
+    if (results.length === 0) {
+      return res.status(401).json({ message: "Invalid admin login" });
+    }
+
+    res.json({
+      role: "admin",
+      admin: results[0]
+    });
+  });
+});
