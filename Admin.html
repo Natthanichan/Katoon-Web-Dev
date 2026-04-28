@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="AdminStyle.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -28,8 +27,8 @@
                 <a class="nav-item active" href="#" id="AdminDashboard">ADMIN DASHBOARD</a>
             </li>
             <li class="out-item">
-                <a href="Homepage.html" class="out">
-                    <lottie-player 
+                <a href="#" class="out" id="logoutBtn">
+                    <lottie-player
                         id="outAnim"
                         src="/image/navbarIcon/out.json"
                         background="transparent"
@@ -46,7 +45,7 @@
     <div class="grid" id="adminGrid">
         <div class="add-card" id="addBtn">
             <a href="#" class="login">
-                <lottie-player 
+                <lottie-player
                     id="addAnim"
                     src="/image/navbarIcon/add.json"
                     background="transparent"
@@ -66,17 +65,17 @@
             <div class="form">
                 <div class="form-group">
                     <label>Cover Picture</label>
-                    <input type="file" id="coverInput">
+                    <input type="file" id="coverInput" accept="image/*">
                 </div>
 
                 <div class="form-group">
                     <label>Title</label>
-                    <input type="text" id="titleInput">
+                    <input type="text" id="titleInput" placeholder="Enter title">
                 </div>
 
                 <div class="form-group">
                     <label>Author name</label>
-                    <input type="text" id="authorInput">
+                    <input type="text" id="authorInput" placeholder="Enter author name">
                 </div>
 
                 <div class="form-group">
@@ -106,13 +105,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label>View</label>
-                    <input type="text" id="viewInput">
+                    <label>Description</label>
+                    <textarea id="descriptionInput" placeholder="Enter description"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>Description</label>
-                    <textarea id="descriptionInput"></textarea>
+                    <label>Status</label>
+                    <select id="statusInput">
+                        <option>Ongoing</option>
+                        <option>Completed</option>
+                        <option>Hiatus</option>
+                    </select>
                 </div>
 
                 <div class="button-group">
@@ -128,12 +131,10 @@
 <footer class="katoon-footer">
     <div class="container-footer">
         <img id="foot-img" src="image/QR code.png" alt="QR Code">
-
         <div class="footer-links">
             <a href="#">ABOUT</a> | <a href="#">FEEDBACK</a> | <a href="#">HELP</a> | <a href="#">TERMS</a><br>
             <a href="#">PRIVACY</a> | <a href="#">ADVERTISE</a> | <a href="#">CONTACT</a>
         </div>
-
         <h2 class="footer-logo">KATOON</h2>
     </div>
 </footer>
