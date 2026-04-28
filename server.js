@@ -10,6 +10,14 @@ app.use(express.json());
 app.use("/image", express.static(path.join(__dirname, "image")));
 app.use("/images", express.static(path.join(__dirname, "images")));
 
+//server config
+app.use(express.static(__dirname));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "Homepage.html"));
+});
+
+
 const db = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -180,3 +188,4 @@ app.post("/api/login/admin", (req, res) => {
 app.listen(3000, () => {
     console.log("Server running at http://localhost:3000");
 });
+
