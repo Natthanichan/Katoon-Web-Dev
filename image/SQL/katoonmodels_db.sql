@@ -27,6 +27,7 @@ DROP TABLE IF EXISTS Katoon;
 CREATE TABLE Katoon (
     katoon_ID   INT PRIMARY KEY AUTO_INCREMENT,
     title       VARCHAR(200) NOT NULL,
+    author      VARCHAR(100),
     status      VARCHAR(20),
     category    VARCHAR(100),
     description TEXT,
@@ -34,26 +35,25 @@ CREATE TABLE Katoon (
     cover_image VARCHAR(500)
 );
 
-INSERT INTO Katoon (katoon_ID, title, status, category, description, release_day, cover_image) VALUES
-(1,  'my body has been possessed by someone',         'Ongoing',   'Fantasy',      'A girl wakes up one day to find a mysterious spirit sharing her body — and it has its own agenda.',         'Monday',    '/image/covers/possessed.jpg'),
-(2,  'my clueless love diary',                        'Completed', 'Romance',      'A hopeless romantic keeps a secret diary about her feelings for her dense best friend.',                      'Tuesday',   '/image/covers/clueless_love.jpg'),
-(3,  'My Secretly Hot Husband',                       'Ongoing',   'Romance',      'She married a plain-looking man for convenience — then he takes off his glasses.',                           'Wednesday', '/image/covers/hot_husband.jpg'),
-(4,  'night owls summer skies',                       'Completed', 'Slice of Life','Two night-shift workers fall in love under the stars of a small seaside town.',                              'Thursday',  '/image/covers/night_owls.jpg'),
-(5,  'omniscient reader',                             'Ongoing',   'Fantasy',      'A man who has read every chapter of a web novel suddenly finds himself living inside its story.',            'Friday',    '/image/covers/omniscient.jpg'),
-(6,  'one husband is enough',                         'Completed', 'Romance',      'After a whirlwind divorce, she swore one husband was enough — until he showed up at her new office.',        'Saturday',  '/image/covers/one_husband.jpg'),
-(7,  'our secret alliance',                           'Ongoing',   'Romance',      'Two rival student council presidents strike a secret deal — and feelings were never part of the agreement.', 'Sunday',    '/image/covers/secret_alliance.jpg'),
-(8,  'A Beast Tamed By The Villainess',               'Completed', 'Drama',        'The kingdom\'s most feared knight kneels only before the woman everyone calls a villain.',                   'Monday',    '/image/covers/beast_villainess.jpg'),
-(9,  'The Villainess Reverses the Hourglass',         'Ongoing',   'Fantasy',      'Executed and sent back in time, she will rewrite every page of her tragic story.',                          'Wednesday', '/image/covers/hourglass.jpg'),
-(10, 'sweet home',                                    'Completed', 'Horror',       'Ordinary residents of an apartment building fight to survive as monsters emerge from within themselves.',    'Wednesday', '/image/covers/sweet_home.jpg'),
-(11, 'The First Night With The Duke',                 'Ongoing',   'Romance',      'A reader of a romance novel wakes up as the extra who spends one night with the cold duke.',                'Friday',    '/image/covers/first_night.jpg'),
-(12, 'The Greatest Estate Developer',                 'Completed', 'Comedy',       'A civil engineering student reincarnates into a fantasy world and decides to revolutionise its real estate.','Tuesday',  '/image/covers/estate_dev.jpg'),
-(13, 'the little revenge plan of a villainess',       'Ongoing',   'Fantasy',      'Framed and disgraced, she returns from exile with a smile and a very detailed revenge spreadsheet.',        'Thursday',  '/image/covers/revenge_plan.jpg'),
-(14, 'the mad bloodhound\'s dying master',            'Completed', 'Action',       'A legendary hunter refuses to let his battle-crazed partner die — even at the cost of his own life.',      'Saturday',  '/image/covers/bloodhound.jpg'),
-(15, 'the time limited villainess wishes for the future', 'Ongoing', 'Fantasy',   'Given only thirty days to live, the villainess decides to spend them making everyone around her happy.',    'Sunday',    '/image/covers/time_limited.jpg'),
-(16, 'to you who killed me',                          'Completed', 'Drama',        'A letter arrives from a dead woman — addressed to the person who loved her most.',                           'Monday',    '/image/covers/killed_me.jpg'),
-(17, 'welcome to the rose mansion',                   'Ongoing',   'Horror',       'Guests at an elegant mansion slowly realise the roses in the garden are blooming a little too red.',         'Thursday',  '/image/covers/rose_mansion.jpg'),
-(18, 'your letter',                                   'Completed', 'Romance',      'She finds a box of unsent letters in her late grandmother\'s attic — all addressed to a stranger.',         'Tuesday',   '/image/covers/your_letter.jpg');
-
+INSERT INTO Katoon (katoon_ID, title, author, status, category, description, release_day, cover_image) VALUES
+(1,  'my body has been possessed by someone', 'Luna Park', 'Ongoing', 'Fantasy', 'A girl wakes up one day to find a mysterious spirit sharing her body — and it has its own agenda.', 'Monday', '/image/covers/possessed.jpg'),
+(2,  'my clueless love diary', 'Mina Choi', 'Completed', 'Romance', 'A hopeless romantic keeps a secret diary about her feelings for her dense best friend.', 'Tuesday', '/image/covers/clueless_love.jpg'),
+(3,  'My Secretly Hot Husband', 'Rebecca Sullivan', 'Ongoing', 'Romance', 'She married a plain-looking man for convenience — then he takes off his glasses.', 'Wednesday', '/image/covers/hot_husband.jpg'),
+(4,  'night owls summer skies', 'Hana Lee', 'Completed', 'Slice of Life', 'Two night-shift workers fall in love under the stars of a small seaside town.', 'Thursday', '/image/covers/night_owls.jpg'),
+(5,  'omniscient reader', 'Kim Dokja', 'Ongoing', 'Fantasy', 'A man who has read every chapter of a web novel suddenly finds himself living inside its story.', 'Friday', '/image/covers/omniscient.jpg'),
+(6,  'one husband is enough', 'Sara Moon', 'Completed', 'Romance', 'After a whirlwind divorce, she swore one husband was enough — until he showed up at her new office.', 'Saturday', '/image/covers/one_husband.jpg'),
+(7,  'our secret alliance', 'Yuna Han', 'Ongoing', 'Romance', 'Two rival student council presidents strike a secret deal — and feelings were never part of the agreement.', 'Sunday', '/image/covers/secret_alliance.jpg'),
+(8,  'A Beast Tamed By The Villainess', 'Iris Valen', 'Completed', 'Drama', 'The kingdom''s most feared knight kneels only before the woman everyone calls a villain.', 'Monday', '/image/covers/beast_villainess.jpg'),
+(9,  'The Villainess Reverses the Hourglass', 'Aria Bell', 'Ongoing', 'Fantasy', 'Executed and sent back in time, she will rewrite every page of her tragic story.', 'Wednesday', '/image/covers/hourglass.jpg'),
+(10, 'sweet home', 'Hyun Kim', 'Completed', 'Horror', 'Ordinary residents of an apartment building fight to survive as monsters emerge from within themselves.', 'Wednesday', '/image/covers/sweet_home.jpg'),
+(11, 'The First Night With The Duke', 'Daisy Lin', 'Ongoing', 'Romance', 'A reader of a romance novel wakes up as the extra who spends one night with the cold duke.', 'Friday', '/image/covers/first_night.jpg'),
+(12, 'The Greatest Estate Developer', 'Lloyd Kang', 'Completed', 'Comedy', 'A civil engineering student reincarnates into a fantasy world and decides to revolutionise its real estate.', 'Tuesday', '/image/covers/estate_dev.jpg'),
+(13, 'the little revenge plan of a villainess', 'Clara Rose', 'Ongoing', 'Fantasy', 'Framed and disgraced, she returns from exile with a smile and a very detailed revenge spreadsheet.', 'Thursday', '/image/covers/revenge_plan.jpg'),
+(14, 'the mad bloodhound''s dying master', 'Raven Black', 'Completed', 'Action', 'A legendary hunter refuses to let his battle-crazed partner die — even at the cost of his own life.', 'Saturday', '/image/covers/bloodhound.jpg'),
+(15, 'the time limited villainess wishes for the future', 'Evelyn Snow', 'Ongoing', 'Fantasy', 'Given only thirty days to live, the villainess decides to spend them making everyone around her happy.', 'Sunday', '/image/covers/time_limited.jpg'),
+(16, 'to you who killed me', 'Noah Gray', 'Completed', 'Drama', 'A letter arrives from a dead woman — addressed to the person who loved her most.', 'Monday', '/image/covers/killed_me.jpg'),
+(17, 'welcome to the rose mansion', 'Rose Miller', 'Ongoing', 'Horror', 'Guests at an elegant mansion slowly realise the roses in the garden are blooming a little too red.', 'Thursday', '/image/covers/rose_mansion.jpg'),
+(18, 'your letter', 'Sophie Lane', 'Completed', 'Romance', 'She finds a box of unsent letters in her late grandmother''s attic — all addressed to a stranger.', 'Tuesday', '/image/covers/your_letter.jpg');
 -- ============================================================
 -- TABLE: User  (ชื่อ User ไม่ใช่ Users — server.js แก้แล้ว)
 -- ============================================================
@@ -285,5 +285,3 @@ INSERT INTO manage_Author VALUES
 USE katoonmodels_db;
 SHOW TABLES;
 SELECT * FROM Admin_Account;
-katoonmodels_db.sql
-17 KB
