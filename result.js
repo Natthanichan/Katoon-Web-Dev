@@ -69,4 +69,8 @@ resultSearchInput.addEventListener("keydown", (e) => {
 // -------------------------
 // 6. โหลดครั้งแรก
 // -------------------------
+<<<<<<< HEAD
 loadResults();
+=======
+loadResults();
+>>>>>>> 7970ac22a6144f36759213ef25f5a81bc248ae0b

@@ -141,4 +141,8 @@ app.post("/api/login/admin", (req, res) => {
       admin: results[0]
     });
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 7970ac22a6144f36759213ef25f5a81bc248ae0b

@@ -65,4 +65,8 @@ searchInput.addEventListener("keydown", (e) => {
 
     window.location.href = `ResultPage.html?keyword=${encodeURIComponent(keyword)}`;
   }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 7970ac22a6144f36759213ef25f5a81bc248ae0b

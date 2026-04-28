@@ -3,17 +3,30 @@
     "bootstrap": "^5.3.8",
     "cors": "^2.8.6",
     "express": "^5.2.1",
+<<<<<<< HEAD
     "mysql2": "^3.22.3",
     "nodemon": "^3.1.14"
+=======
+    "mysql2": "^3.22.3"
+>>>>>>> 7970ac22a6144f36759213ef25f5a81bc248ae0b
   },
   "name": "katoon-web-dev",
   "version": "1.0.0",
   "description": "Web dev",
+<<<<<<< HEAD
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
+=======
+  "main": "script.js",
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+},
+>>>>>>> 7970ac22a6144f36759213ef25f5a81bc248ae0b
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Natthanichan/Katoon-Web-Dev.git"
@@ -25,5 +38,13 @@
   "bugs": {
     "url": "https://github.com/Natthanichan/Katoon-Web-Dev/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/Natthanichan/Katoon-Web-Dev#readme"
 }
+=======
+  "homepage": "https://github.com/Natthanichan/Katoon-Web-Dev#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
+>>>>>>> 7970ac22a6144f36759213ef25f5a81bc248ae0b

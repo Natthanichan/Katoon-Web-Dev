@@ -145,4 +145,8 @@ async function login(type) {
         console.log(err);
         alert("Cannot connect to server");
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7970ac22a6144f36759213ef25f5a81bc248ae0b

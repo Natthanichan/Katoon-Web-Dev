@@ -29,4 +29,8 @@ searchInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     goToResultPage();
   }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 7970ac22a6144f36759213ef25f5a81bc248ae0b
