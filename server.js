@@ -8,9 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ให้ browser เปิดรูปจาก folder image ได้
-app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/image", express.static(path.join(__dirname, "image")));
+app.use("/images", express.static(path.join(__dirname, "images")));
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -27,18 +26,11 @@ db.connect((err) => {
   console.log("Connected to MySQL");
 });
 
-// GET all + search
 app.get("/api/katoons", (req, res) => {
   const { keyword, searchBy, category, status } = req.query;
 
   let sql = `
-    SELECT 
-      katoon_ID,
-      title,
-      status,
-      category,
-      description,
-      cover_image
+    SELECT katoon_ID, title, status, category, description, release_day, cover_image
     FROM Katoon
     WHERE 1=1
   `;
@@ -78,6 +70,75 @@ app.get("/api/katoons", (req, res) => {
   });
 });
 
+app.get("/api/katoons/:id", (req, res) => {
+  const sql = `
+    SELECT katoon_ID, title, status, category, description, release_day, cover_image
+    FROM Katoon
+    WHERE katoon_ID = ?
+  `;
+
+  db.query(sql, [req.params.id], (err, results) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Database error" });
+    }
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: "Katoon not found" });
+    }
+
+    res.json(results[0]);
+  });
+});
+
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");
+});
+
+// USER LOGIN
+app.post("/api/login/user", (req, res) => {
+  const { username, password } = req.body;
+
+  const sql = `
+    SELECT user_id, name
+    FROM Users
+    WHERE name = ? AND password = ?
+  `;
+
+  db.query(sql, [username, password], (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error" });
+
+    if (results.length === 0) {
+      return res.status(401).json({ message: "Invalid user login" });
+    }
+
+    res.json({
+      role: "user",
+      user: results[0]
+    });
+  });
+});
+
+// ADMIN LOGIN
+app.post("/api/login/admin", (req, res) => {
+  const { username, password } = req.body;
+
+  const sql = `
+    SELECT username, role
+    FROM Admin_Account
+    WHERE username = ? AND password = ?
+  `;
+
+  db.query(sql, [username, password], (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error" });
+
+    if (results.length === 0) {
+      return res.status(401).json({ message: "Invalid admin login" });
+    }
+
+    res.json({
+      role: "admin",
+      admin: results[0]
+    });
+  });
 });
