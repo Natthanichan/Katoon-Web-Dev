@@ -5,20 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UserPage</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
-    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="UserPageStyle.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
 
-    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    // โหลด library lottie
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <!-- .JS-->
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -33,31 +27,29 @@
               <li>
                   <a class="nav-item" href="Homepage.html" id="ORIGINAL">ORIGINAL</a>
               </li>
-              <li >
+              <li>
                   <a class="nav-item" href="Team.html" id="TEAM">TEAM</a>
               </li>
               <li class="search-item">
-                      <a href="#" class="search">
-                      <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
-                      <lottie-player 
+                  <a href="SearchPage.html" class="search">
+                      <lottie-player
                           id="searchAnim"
                           src="/image/navbarIcon/search.json"
                           background="transparent"
                           speed="1"
-                          style="width:30px; height: 30px;"
-                      ></lottie-player>
+                          style="width:30px; height: 30px;">
+                      </lottie-player>
                   </a>
               </li>
               <li class="login-item">
                   <a href="#" class="login">
-                      <!-- ตัวเล่น animation สำหรับไฟล์ Lottie -->
-                      <lottie-player 
+                      <lottie-player
                           id="loginAnim"
                           src="/image/navbarIcon/login.json"
                           background="transparent"
                           speed="1"
-                          style="width:35px; height: 35px;"
-                      ></lottie-player>
+                          style="width:35px; height: 35px;">
+                      </lottie-player>
                   </a>
               </li>
           </ul>
@@ -66,47 +58,35 @@
 
 <main>
     <h1 class="section-title">Login Information</h1>
-    <article class="profile-card">
+
     <div class="profile-card">
-
-        <!-- upload รูป -->
-        <input type="file" id="upload" hidden>
-
+        <input type="file" id="upload" hidden accept="image/*">
         <label for="upload">
             <img src="https://via.placeholder.com/100" id="profileImage" class="profile-pic">
         </label>
-
         <div class="user-info">
-            <p><strong>Username:</strong> user123</p>
+            <p><strong>Username:</strong> <span id="displayUsername">user123</span></p>
         </div>
-
+        <button class="edit-btn logout-btn" id="logoutBtn">Logout</button>
     </div>
 
     <h1 class="section-title">Nickname</h1>
-
     <div class="profile-card">
         <div class="user-info">
-            <p><strong>Nickname:</strong> Toon</p>
+            <p><strong>Nickname:</strong> <span id="displayNickname">Toon</span></p>
         </div>
-
-        <button class="edit-btn">Edit</button>
+        <button class="edit-btn" id="editNicknameBtn">Edit</button>
     </div>
 
     <h1 class="section-title">Email</h1>
-
     <div class="profile-card column">
-
-        <!-- Email -->
         <div class="email-row">
             <div class="user-info">
-                <p><strong>Email:</strong> user@email.com</p>
+                <p><strong>Email:</strong> <span id="displayEmail">user@email.com</span></p>
             </div>
             <button class="edit-btn">Add</button>
         </div>
-
         <hr>
-
-        <!-- Toggle 1 -->
         <div class="toggle-row">
             <span>Service Emails</span>
             <label class="switch">
@@ -114,8 +94,6 @@
                 <span class="slider"></span>
             </label>
         </div>
-
-        <!-- Toggle 2 -->
         <div class="toggle-row">
             <span>Top Comments/Comments</span>
             <label class="switch">
@@ -123,42 +101,57 @@
                 <span class="slider"></span>
             </label>
         </div>
-
     </div>
 
     <h1 class="section-title">Coin Information</h1>
-
     <div class="profile-card coin-card">
-
-        <!-- ซ้าย -->
         <div class="coin-left">
             <p class="coin-label">Current coin</p>
             <h2 class="coin-value">185,428 coin</h2>
         </div>
-
-        <!-- เส้นแบ่ง -->
         <div class="divider"></div>
-
-        <!-- ขวา -->
         <div class="coin-right">
             <p class="coin-label">Transaction log</p>
-
             <div class="transaction">
                 <span>20/11/2030</span>
                 <span class="plus">+200</span>
             </div>
-
             <div class="transaction">
                 <span>19/11/2030</span>
                 <span class="plus">+30</span>
             </div>
         </div>
-
     </div>
-    </article>
 </main>
 
+<footer class="katoon-footer">
+    <div class="container-footer">
+        <img id="foot-img" src="image/QR code.png" alt="QR Code">
+        <div class="footer-links">
+            <a href="#">ABOUT</a> | <a href="#">FEEDBACK</a> | <a href="#">HELP</a> | <a href="#">TERMS</a><br>
+            <a href="#">PRIVACY</a> | <a href="#">ADVERTISE</a> | <a href="#">CONTACT</a>
+        </div>
+        <h2 class="footer-logo">KATOON</h2>
+    </div>
+</footer>
+
 <script>
+// Load user data from localStorage
+window.addEventListener("load", () => {
+    const loginData = JSON.parse(localStorage.getItem("loginData") || "{}");
+    const role = localStorage.getItem("loginRole");
+
+    if (role !== "user") {
+        window.location.href = "Homepage.html";
+        return;
+    }
+
+    if (loginData.user) {
+        document.getElementById("displayUsername").textContent = loginData.user.name || "user123";
+    }
+});
+
+// Profile image upload
 document.getElementById("upload").addEventListener("change", function(event) {
     const file = event.target.files[0];
     if (file) {
@@ -169,20 +162,23 @@ document.getElementById("upload").addEventListener("change", function(event) {
         reader.readAsDataURL(file);
     }
 });
-</script>
 
-  <footer class="katoon-footer">
-      <div class="container-footer">
-          <img id="foot-img" src="image/QR code.png" alt="QR Code">
-          
-          <div class="footer-links">
-              <a href="#">ABOUT</a> | <a href="#">FEEDBACK</a> | <a href="#">HELP</a> | <a href="#">TERMS</a><br>
-              <a href="#">PRIVACY</a> | <a href="#">ADVERTISE</a> | <a href="#">CONTACT</a>
-          </div>
-          
-          <h2 class="footer-logo">KATOON</h2>
-      </div>
-  </footer>
+// Logout
+document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("loginRole");
+    localStorage.removeItem("loginData");
+    window.location.href = "Homepage.html";
+});
+
+// Edit nickname (simple prompt for now)
+document.getElementById("editNicknameBtn").addEventListener("click", () => {
+    const current = document.getElementById("displayNickname").textContent;
+    const newNick = prompt("Enter new nickname:", current);
+    if (newNick && newNick.trim()) {
+        document.getElementById("displayNickname").textContent = newNick.trim();
+    }
+});
+</script>
 
 </body>
 </html>

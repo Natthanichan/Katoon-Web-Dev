@@ -1,95 +1,55 @@
-/* Imporing Google font */
 @import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-
-.joti-one-regular {
-  font-family: "Joti One", serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.roboto-mono-small {
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
 :root {
-    /*color*/
-    --white-color: #fff;
-    --dark-color: #252525;
-    --primary-color: #FFF5E4;
-    --cream-color: #FFF5E4;
+    --white-color:     #fff;
+    --dark-color:      #252525;
+    --primary-color:   #FFF5E4;
+    --cream-color:     #FFF5E4;
     --secondary-color: #0181B4;
-    --blue-color-font: rgba(1, 129, 180, 0.626);
-    --blue-color: #0181B4;
-    --orange-color: #E3AE79;
-    --gray-color: #757575;
-
-    /*Font size*/
-    --font-size-s: 0.9rem;
-    --font-size-n: 1rem;
-    --font-size-m: 1.12rem;
-    --font-size-l: 1.5rem;
-    --font-size-xl: 2.1rem;
-    --font-size-xxl: 2.3rem;
-
-    /*Font weight*/
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
+    --blue-color:      #0181B4;
+    --orange-color:    #E3AE79;
+    --gray-color:      #757575;
+    --font-size-s:     0.9rem;
+    --font-size-n:     1rem;
+    --font-size-m:     1.12rem;
+    --font-size-l:     1.5rem;
+    --font-size-xl:    2.1rem;
+    --font-size-xxl:   2.3rem;
+    --font-weight-normal:   400;
+    --font-weight-medium:   500;
     --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    
-    /*Border radius*/
-    --border-radius-s: 8px;
-    --border-radius-m: 30px;
+    --font-weight-bold:     700;
+    --border-radius-s:      8px;
+    --border-radius-m:      30px;
     --border-radius-circle: 50%;
-
-    /*Size max width*/
-    --site-max-width: 1300px;
+    --site-max-width:       1300px;
 }
 
-
-.carousel, 
-.carousel-inner, 
-.carousel-item {
-    background-color: transparent;
-}
+/* ============================================================
+   CAROUSEL
+   ============================================================ */
+.carousel, .carousel-inner, .carousel-item { background-color: transparent; }
 
 .carousel {
-    max-width: 1000px; 
-    margin: 130px auto;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .carousel-item img {
     width: 100%;
-    height: 300px;      
-    object-fit: cover;   
+    height: 300px;
+    object-fit: cover;
     display: block;
 }
 
-.hero-section .hero-item {
-    flex: 1;
-    min-width: 0; 
-}
-
-.hero-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-/* ===============================
-   Public Web Service: Quote Box
-   =============================== */
+/* ============================================================
+   QUOTE BOX
+   ============================================================ */
 .quote-title {
     color: var(--secondary-color);
     font-family: "Joti One", serif;
     font-size: var(--font-size-l);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .quote-box {
@@ -116,14 +76,13 @@
     letter-spacing: 1px;
 }
 
-/* ===============================
-   Daily Section
-   =============================== */
+/* ============================================================
+   DAILY SECTION
+   ============================================================ */
 .daily-title {
     color: var(--secondary-color);
     font-family: "Joti One", serif;
     font-size: var(--font-size-l);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .day-filters {
@@ -134,7 +93,7 @@
 
 .day-pill {
     padding: 6px 20px;
-    background-color: #EFE4D6; 
+    background-color: #EFE4D6;
     color: var(--dark-color);
     border-radius: var(--border-radius-m);
     font-family: "Roboto Mono", monospace;
@@ -142,28 +101,24 @@
     font-size: var(--font-size-s);
     cursor: pointer;
     transition: 0.2s ease;
+    user-select: none;
 }
 
+.day-pill.active { background-color: var(--orange-color); }
+.day-pill:hover  { background-color: var(--orange-color); opacity: 0.8; }
 
-.day-pill.active {
-    background-color: var(--orange-color);
-    color: var(--dark-color);
-}
-
-.day-pill:hover {
-    background-color: var(--orange-color);
-    opacity: 0.8;
-}
-
-/* ===============================
-   Cartoon Cards 
-   =============================== */
+/* ============================================================
+   KATOON CARDS
+   ============================================================ */
 .katoon-card {
     display: flex;
     flex-direction: column;
     border: none;
     background: transparent;
+    transition: 0.2s;
 }
+
+.katoon-card:hover { transform: translateY(-4px); }
 
 .katoon-card img {
     width: 100%;
@@ -189,29 +144,53 @@
     line-height: 1.2;
 }
 
+/* ============================================================
+   LOGIN MODAL
+   ============================================================ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal.show { display: flex; }
 
 .modal-content {
-    background-color: #B3EFFF; 
+    background-color: #B3EFFF;
     padding: 40px;
     border-radius: 30px;
     width: 450px;
-    text-align: left; 
+    text-align: left;
     position: relative;
     border: none;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-color);
+    line-height: 1;
+}
+
+.close-btn:hover { color: var(--blue-color); }
+
 .modal-title {
-    color: #0181B4; 
+    color: var(--blue-color);
     font-family: "Joti One", serif;
     text-align: center;
     margin-bottom: 25px;
     font-size: 2rem;
 }
 
-.login-field {
-    margin-bottom: 20px;
-}
+.login-field { margin-bottom: 20px; }
 
 .login-field label {
     display: block;
@@ -226,39 +205,24 @@
     border-radius: 10px;
     border: 1px solid #ccc;
     background: white;
+    font-family: "Roboto Mono", monospace;
 }
 
-
-.btn-user {
-    background-color: var(--secondary-color); 
-    color: white;
+.btn-login {
+    width: 100%;
     border: none;
     padding: 12px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
     margin-top: 10px;
+    transition: 0.2s;
 }
 
+.btn-user  { background-color: var(--secondary-color); color: white; }
+.btn-admin { background-color: var(--orange-color);    color: white; }
 
-.btn-admin {
-    background-color: var(--orange-color);
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 1.2rem;
-    font-family: "Roboto Mono", monospace;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.modal.show {
-    display: flex;
-}
+.btn-user:hover  { opacity: 0.85; }
+.btn-admin:hover { opacity: 0.85; }

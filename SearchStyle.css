@@ -1,57 +1,46 @@
-/* Imporing Google font */
+/* ============================================================
+   TOP BREAD: GROUP THEME & NAVBAR
+   ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
-
-.joti-one-regular {
-  font-family: "Joti One", serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.roboto-mono-small {
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 :root {
-    /*colot*/
-    --white-color: #fff;
-    --dark-color: #252525;
-    --primary-color: #FFF5E4;
-    --cream-color: #FFF5E4;
-    --secondary-color: #0181B4;
-    --blue-color-font: rgba(1, 129, 180, 0.626);
-    --blue-color: #0181B4;
-    --orange-color: #f4bf89;
-    --gray-color: #757575;
-
-    /*Font size*/
-    --font-size-s: 0.9rem;
-    --font-size-n: 1rem;
-    --font-size-m: 1.12rem;
-    --font-size-l: 1.5rem;
-    --font-size-xl: 2.1rem;
-    --font-size-xxl: 2.3rem;
-
-    /*Font weight*/
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    
-    /*Border radius*/
-    --border-radius-s: 8px;
-    --border-radius-m: 30px;
-    --border-radius-circle: 50%;
-
-    /*Size max width*/
-    --site-max-width: 1300px;
-
+    --primary-bg: #FFF5E4;
+    --card-bg: #F8EAD6;
+    --blue-font: #0181B4;
+    --gray-text: #757575;
+    --orange-highlight: #E3AE79;
 }
 
+body {
+    background-color: var(--primary-bg);
+    font-family: "Roboto Mono", monospace;
+    margin: 0;
+}
+
+header {
+    background: var(--primary-bg);
+    height: 100px;
+    border-bottom: 1px solid #e5d5c5;
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+}
+
+.navbar { display: flex; align-items: center; height: 100%; padding: 0 40px; }
+
+.logo-text {
+    color: var(--blue-font);
+    font-family: "Joti One";
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex; gap: 40px; list-style: none; margin: 0; align-items: center; width: 100%;
+}
+
+.nav-item { color: var(--gray-text); text-decoration: none; font-weight: bold; }
+.search-item { margin-left: auto; }
 
 /* ============================================================
    THE MEAT: YOUR UPDATED SEARCH UI
@@ -63,7 +52,7 @@
 }
 
 .search-card-ui {
-    background-color: var(--orange-color);
+    background-color: var(--card-bg);
     border-radius: 25px;
     padding: 40px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
@@ -176,4 +165,22 @@
     margin: 0;
 }
 
+/* ============================================================
+   BOTTOM BREAD: FOOTER
+   ============================================================ */
+.katoon-footer {
+    border-top: 1px solid #e5d5c5;
+    padding-top: 40px;
+}
 
+.footer-logo { font-family: "Joti One"; color: var(--blue-font); }
+.footer-links a { color: var(--gray-text); text-decoration: none; margin: 0 10px; font-size: 0.9rem;}
+
+.katoon-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background: #eee;
+}
