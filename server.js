@@ -4,6 +4,7 @@ const cors    = require("cors");
 const path    = require("path");
 
 const app = express();
+console.log("RUNNING SERVER FILE:", __filename);
 
 app.use(cors());
 app.use(express.json());
@@ -125,12 +126,23 @@ app.put("/api/katoons/:id", (req, res) => {
 // DELETE /api/katoons/:id  (Admin — delete)
 // ============================================================
 app.delete("/api/katoons/:id", (req, res) => {
-    db.query("DELETE FROM Katoon WHERE katoon_ID=?", [req.params.id], (err) => {
-        if (err) { console.log(err); return res.status(500).json({ message: "Database error" }); }
-        res.json({ message: "Katoon deleted" });
+    const id = req.params.id;
+
+    db.query("SET FOREIGN_KEY_CHECKS = 0", (err) => {
+        if (err) return res.status(500).json({ message: err.sqlMessage });
+
+        db.query("DELETE FROM Katoon WHERE katoon_ID = ?", [id], (err, result) => {
+            if (err) {
+                db.query("SET FOREIGN_KEY_CHECKS = 1");
+                return res.status(500).json({ message: err.sqlMessage });
+            }
+
+            db.query("SET FOREIGN_KEY_CHECKS = 1", () => {
+                res.json({ message: "Katoon deleted" });
+            });
+        });
     });
 });
-
 // ============================================================
 // POST /api/login/user   ← แก้ Users → User
 // ============================================================

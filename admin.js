@@ -181,12 +181,10 @@ saveBtn.addEventListener("click", async () => {
         popup.classList.remove("show");
         resetForm();
     } catch (err) {
-        console.log("Save error:", err);
-        // Fallback: render locally even if server is down
-        renderCard({ katoon_ID: Date.now(), title, category: genre, cover_image: imageURL });
-        popup.classList.remove("show");
-        resetForm();
-    }
+    console.log("Save error:", err);
+    alert("Save failed ❌");
+    return;
+}
 });
 
 // ============================================================
@@ -209,7 +207,7 @@ updateBtn.addEventListener("click", async () => {
     if (file) imageURL = URL.createObjectURL(file);
 
     try {
-        await fetch(`${API}/${selectedKatoonId}`, {
+        const res = await fetch(`${API}/${selectedKatoonId}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -222,10 +220,16 @@ updateBtn.addEventListener("click", async () => {
                 cover_image: imageURL
             })
         });
+
+        if (!res.ok) {
+            alert("Update failed ❌");
+            return;
+        }
+
     } catch (err) {
         console.log("Update error:", err);
+        return;
     }
-
     // Update card UI regardless
     selectedCard.querySelector(".card-title").innerText = title;
     selectedCard.querySelector(".genre").innerText = genre;
@@ -246,19 +250,30 @@ deleteBtn.addEventListener("click", async () => {
     if (!confirm("Are you sure you want to delete this katoon?")) return;
 
     try {
-        await fetch(`${API}/${selectedKatoonId}`, { method: "DELETE" });
+        console.log("selectedKatoonId =", selectedKatoonId);
+        console.log("DELETE URL =", `${API}/${selectedKatoonId}`);
+
+        const res = await fetch(`${API}/${selectedKatoonId}`, {
+        method: "DELETE"
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            console.log("Delete failed:", data);
+            alert(data.message || "Delete failed ❌");
+            return;
+        }
+
+        selectedCard.remove();
+        popup.classList.remove("show");
+        resetForm();
+
     } catch (err) {
         console.log("Delete error:", err);
+        alert("Delete error ❌");
     }
-
-    selectedCard.remove();
-    selectedCard = null;
-    selectedKatoonId = null;
-
-    popup.classList.remove("show");
-    resetForm();
 });
-
 // ============================================================
 // HELPERS
 // ============================================================
